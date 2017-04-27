@@ -1,0 +1,66 @@
+
+<div class="binding-card-wrap">
+	<form name="myForm" novalidate="novalidate">
+		<ul class="binding-card">
+			<li> 
+				<label>账&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
+				<input type="text" ng-model="ajaxData.real_name" placeholder="请输入帐户名"/>
+			</li>
+			<li> 
+				<label>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</label>
+				<input type="text" ng-model="ajaxData.mobile" placeholder="请输入手机号码" />
+			</li>
+			<li>
+				<label>身份证号</label>
+				<input type="text" ng-model="ajaxData.idnumber" placeholder="请输入身份证号码"/>
+			</li>
+			<li>
+				<label>开&nbsp;&nbsp;户&nbsp;&nbsp;行</label>
+				<input type="text" ng-model="ajaxData.bank_branch" placeholder="示例:招商银行XX省XX市XX支行"/>
+			</li>
+			<li>
+				<label>银行卡号</label>
+				<input type="text" ng-model="ajaxData.card_no" placeholder="请输入正确的银行卡号"/>
+			</li>
+		</ul>
+
+
+		<div class="face-id" ng-click="uploadImage('idnumber_front')">
+			<div class="field autoClear" >
+				<div class="id-img" ng-show="!ajaxData.idnumber_front">
+					<span class="plus">+</span>
+					<p>请上传您的身份证正面图片</p>
+				</div>
+				<img class="pic-preview" ng-src="{{ajaxData.idnumber_front}}" ng-show="ajaxData.idnumber_front">
+			</div>
+			<div class="look-more-btn bg-color-light">
+				<a class="color-fff" ng-click="changeHref('makemoney/bindingcardinfo')">查看示例</a>
+			</div>
+		</div>
+		<div class="back-id"  ng-click="uploadImage('idnumber_back')">
+			<div class="field autoClear">
+				<div class="id-img" ng-show="!ajaxData.idnumber_back">
+					<span class="plus">+</span>
+					<p>请上传您的身份证反面图片</p>
+				</div>
+				<img class="pic-preview" ng-src="{{ajaxData.idnumber_back}}" ng-show="ajaxData.idnumber_back">
+			</div>
+			<div class="look-more-btn bg-color-light">
+				<a class="color-fff" ng-click="changeHref('makemoney/bindingcardinfo')">查看示例</a>
+			</div>
+		</div>
+		<div class="face-bank" ng-click="uploadImage('bankcard_front')">
+			<div class="field autoClear" >
+				<div class="id-img" ng-show="!ajaxData.bankcard_front">
+					<span class="plus" >+</span>
+					<p>请上传您的银行卡正面图片</p>
+				</div>
+				<img class="pic-preview" ng-src="{{ajaxData.bankcard_front}}" ng-show="ajaxData.bankcard_front">
+			</div>
+			<div class="look-more-btn bg-color-light">
+				<a class="color-fff" ng-click="changeHref('makemoney/bindingcardinfo')">查看示例</a>
+			</div>
+		</div>
+		<div class="card-save color-fff fontsize-1280 bg-color-deep" ng-click="cardSave()">保存</div>
+	</form>
+</div>

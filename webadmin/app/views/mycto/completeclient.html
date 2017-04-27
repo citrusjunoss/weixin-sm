@@ -1,0 +1,65 @@
+<div class="mycto-wrap">
+  <div class="myclient-top">
+    <!-- 头像 (后台没有数据,若有需求再改)-->
+    <div class="myhead-portraitbg"></div>
+    <div class="myhead-portrait-box boderradius-50">
+      <img class="boderradius-50" ng-src="{{image_url}}" alt="">
+    </div>
+  </div>
+  <form name="myform" novalidate="novalidate">
+    <div class="myclient-bottom">
+      <div class="clearfix">
+        <p class="float-left myclient-info">
+          <span>姓</span><span>名</span>
+        </p>
+        <input class="float-left" type="text" ng-model="model.user_name" placeholder="请输入2-5位中文" name="name"
+               ng-pattern="/^[\u4E00-\u9FA5]{2,5}$/" required/>
+      </div>
+      <div class="clearfix">
+        <p class="float-left  myclient-info">
+          <span>姓</span><span>别</span>
+        </p>
+
+        <div class="float-left sex">
+          <label class="sex-bg">
+            <span ng-class="{active:model.gender == 1}"></span>
+            <input name="gender" type="radio" ng-model="model.gender"  value="1">&nbsp;男
+          </label>
+          <label class="sex-bg">
+            <span ng-class="{active:model.gender == 2}"></span>
+            <input name="gender" type="radio" ng-model="model.gender"  value="2">&nbsp;女
+          </label>
+        </div>
+      </div>
+      <div class="clearfix">
+        <p class="float-left myclient-info">
+          <span>手机</span><span>号码</span>
+        </p>
+        <input class="float-left" type="text" placeholder="请输入您的手机号码" ng-model="model.mobile"
+               ng-pattern="/^1[34578]\d{9}$/" name="phone" required/>
+
+      </div>
+      <div class="clearfix">
+
+        <p class="float-left myclient-info">
+          <span>状</span><span>态</span>
+        </p>
+        <div class="mystatus-select float-left">
+          <select ng-model="model.status"
+                  ng-options="list.id as list.name for list in lists">
+          </select>
+        </div>
+      </div>
+      <div class="clearfix">
+
+        <p class="float-left myclient-info">
+          <span>备</span><span>注</span>
+        </p>
+        <textarea class="float-left remark" placeholder="请输入备注信息，最多100字"  name="remark" ng-minlength="1" ng-maxlength="100" ng-model="model.remarks" required/></textarea>
+      </div>
+      <div class="submit boderradius-4" ng-click="submit()">
+        <span>提交</span>
+      </div>
+    </div>
+  </form>
+</div>

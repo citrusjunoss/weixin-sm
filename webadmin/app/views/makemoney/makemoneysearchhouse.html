@@ -1,0 +1,12 @@
+<!--搜索蒙层-->
+<div class="search-box" >
+    <div class="search-head">
+        <input type="text" class="house-search" placeholder="请输入楼盘名称" ng-model="ajaxData.search_name">
+        <i class="icon-search" ng-click="searchHouse()"></i>
+        <span ng-click="cancelSearch()">取消</span>
+    </div>
+    <div class="hot-title">热门搜索</div>
+    <div class="hot-house">
+       <span ng-repeat="a in areaList" ng-bind="a.name"  ng-click="areaChoose(a.id)"></span>
+    </div>
+</div>

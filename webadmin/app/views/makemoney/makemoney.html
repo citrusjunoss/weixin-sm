@@ -1,0 +1,138 @@
+<div class="makemoney">
+  <div class="make-money-wrap">
+    <div class="city-wrap clearfix">
+      <div class="addr-info">
+        <span class="logo"></span>
+        <a ng-click="chooseCityCom()" class="addr" ng-bind="locationCity"></a>
+        <span class="down-arrow"></span>
+      </div>
+      <div class="search-info">
+        <span class="search-city" ng-click="searchHouse()"></span>
+      </div>
+    </div>
+    <!--轮播图开始-->
+    <div class="company-wrap">
+      <div class="swiper-container makeswiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" ng-repeat="i in slideList">
+            <a ng-click="changeHref(i.link)">
+              <img ng-src="{{i.file_cdn_path}}" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!--轮播图结束-->
+    <!--导航-->
+
+    <div class="make-money-nav clearfix">
+      <div class="nav-recommend fl" ng-click="goHref(1)">
+        <div>
+          <span class="recommend">推荐买房</span>
+          <!-- <span class="marke-en">RECOMMEND</span>
+        -->
+      </div>
+      <div class="already">
+        已推荐
+        <span class="marke-num color-ef6565" ng-bind="userInfo.apply_count?userInfo.apply_count:'0'"></span>
+        套
+      </div>
+    </div>
+    <div class="nav-commission fr" ng-click="goHref(2)">
+      <div>
+        <span class="recommend">我的佣金</span>
+        <!-- <span class="marke-en">COMMISSION</span>
+      -->
+    </div>
+    <div class="already">
+      待结
+      <span class="marke-num color-ef6565" ng-bind="userInfo.commission?userInfo.commission/100:'0.00'"></span>
+      元
+    </div>
+  </div>
+</div>
+
+<!--在售楼盘-->
+<!--楼盘列表-->
+<ul class="house-list">
+  <li class="house-li" ng-repeat="item in houseList">
+    <div class="house-img">
+      <a ng-click="changeHref('building/detail?id=' + item.houseonline[0].house_id + '&city=' + item.city)">
+        <img ng-src="{{item.img_url}}" alt=""></a>
+      <div class="discount" ng-show="item.houseonline[0].show">
+      <!-- item.houseonline[0].commission_total + -->
+        <span class="num fr" ng-bind="getCommission(item.houseonline[0])"></span>
+        <span class="jiang fr">奖</span>
+      </div>
+      
+     <!-- <div class="discount" ng-show="item.houseonline[0].commission_setting == 2">
+        <span class="num fr" ng-bind="item.houseonline[0].commission_total/100 + '元'"></span>
+        <span class="jiang fr">奖</span>
+      </div>
+      <div class="discount" ng-show="item.houseonline[0].commission_setting  == 3">
+        <span class="num fr" ng-bind="item.houseonline[0].commission_total"></span>
+        <span class="jiang fr">奖</span>
+      </div>-->
+      
+      <div class="hot-tag"></div>
+      <div class="price-tag">
+        均价
+        <span ng-bind="item.price"></span>
+        元/m <sup>2</sup>
+      </div>
+    </div>
+    <div class="house-info">
+      <div class="house-name" ng-bind="item.house_name"></div>
+      <div class="house-detail">
+        <span class="house-addr house-addr-recommend" ng-bind="item.prince + item.city + item.district + item.addr"></span>
+        <a ng-click="goHref(3,item.houseonline[0].house_id)" class="house-recommend"> <i></i>
+          推荐
+        </a>
+      </div> 
+      <div class="house-information clearfix">
+        <div class="house-tag">
+          <span ng-repeat="i in item.brief" ng-bind="i"></span>
+        </div>
+        <div class="house-right">
+          <a ng-if="item.houseonline[0].agent_content != ''" ng-click="changeHref('makemoney/activerule?house_id=' + item.houseonline[0].house_id + '&id=' + item.houseonline[0].id)" class="house-role">
+            规则 <i></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </li>
+  <li ng-if="houseList.length == 0" class="border-0">
+    <div class="disconcerned">
+      <div class="disconcerned-data">
+        <img src="../../images/mycto/icon4.png" alt="">
+
+        <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+      </div>
+    </div>
+  </li>
+</ul>
+<!--佣金备注-->
+
+<!--底部菜单-->
+<a ng-click="changeHref('makemoney/signup')" class="color-fff binding-info-btn sign-broker register" ng-if="isShow">立即注册经纪人</a>
+<div class="tab-bar">
+  <div ng-click="tabChange(1)" ng-class="{'bg-color-select':status == 1}">
+    <i class="icon-home iconm"></i>
+    首页
+  </div>
+  <div ng-click="tabChange(2)" ng-class="{'bg-color-select':status == 2}">
+    <i class="icon-client iconm"></i>
+    我的客户
+  </div>
+  <div ng-click="tabChange(3)" ng-class="{'bg-color-select':status == 3}">
+    <i class="icon-pcenter iconm"></i>
+    个人中心
+  </div>
+</div>
+</div>
+</div>
+<script>
+  $('body').css('background','#fff');
+</script>

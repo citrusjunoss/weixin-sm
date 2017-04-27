@@ -1,0 +1,30 @@
+<div class="appoint-page" >
+	<!--项目展示开始-->
+	<div class="building-wrap-appoint">
+		<img ng-src="{{image_url}}" >
+	</div>
+	<!--项目展示结束-->
+	<!--提交表单开始-->
+		<form name="myForm" novalidate="novalidate">
+			<ul class="appoint-ul">
+				<li><span>您的姓名</span><input type="text" ng-model="user.user_name" placeholder="请输入您的姓名" name="name"/></li>
+				<li><span>预约时间</span><input name="time" ng-model="user.subscribe_time" id="input-time" type="datetime-local" /></li>
+				<li><span>手机号码</span><input type="text" ng-model="user.mobile" name="phone" placeholder="请输入手机号" /></li>
+				<li><span>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><textarea ng-model="user.remark"></textarea></li>
+			</ul>
+		</form>
+		<div class="submit-btn" ng-click="saveBtn()">提交信息</div>
+	<!--提交表单结束-->
+	<!--弹层开始-->
+	<div class="elastic-layer" >
+		<div class="pop-up-wrap">
+			<div class="pop-up-msg">
+				<p>恭喜您预约成功</p>
+				<p>我们将尽快与您确认具体的预约行程</p>
+			</div>
+			<div class="confirm"  ng-click="confirm()">
+				好的
+			</div>
+		</div>
+	</div>
+</div>

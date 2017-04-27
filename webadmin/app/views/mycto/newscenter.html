@@ -1,0 +1,23 @@
+<div class="mycto-wrap company-wrap ">
+  <div ng-show="news">
+    <h2 ng-bind="news.title" class="title-news" cloak></h2>
+
+    <div class="editor-wraps">
+      <div class="news-date">
+        <span ng-bind="news.writetime"></span>
+      </div>
+      <p Filter id="js-content" ng-bind-html="news.content | trust:'html'"></p>
+    </div>
+
+  </div>
+  <div class="disconcerned" ng-if="!news">
+    <div class="disconcerned-data">
+      <img src="../../images/mycto/icon4.png" alt="">
+
+      <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+    </div>
+    <div class="mycto-login-submit boderradius-4">
+      <a ng-click="changeHref('/building/index')">点击浏览楼盘信息</a>
+    </div>
+  </div>
+</div>

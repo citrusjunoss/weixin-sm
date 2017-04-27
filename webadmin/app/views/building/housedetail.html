@@ -1,0 +1,30 @@
+<!--楼盘简介-->
+    <div class="house-detail-wrap" >
+        <div class="swiper-container house-detail-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="i in swiperData"><img ng-src="{{i.img_url}}" alt="" /></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="house-info">
+            <div class="house-info-left">
+                <div class="house-price"><span ng-bind="model.price">50000</span>元/m<sup>2</sup></div>
+                <div><span ng-bind="model.addr" style="color: #6D6A6A;">上海市青浦区 中青路新龙路路口</span></div>
+                <div class="house-tag"><span ng-repeat="b in model.brief" ng-bind="b"></span></div>
+            </div>
+            <div class="house-info-right">
+                <div style="margin-bottom: 0.1rem;"><i class="icon icon-phone"></i><a ng-href="{{'tel:'+ model.tel}}">联系售楼处</a></div>
+                <div style="margin-bottom: 0.1rem;"><i class="icon icon-program"></i><a ng-click="changeHref('building/progresslist?id='+ model.house_id)">项目动态</a></div>
+                <div><i class="icon icon-plan"></i><a ng-click="searchGo()">导航</a></div>
+            </div>
+        </div>
+    </div>
+<!--楼盘详情-->
+<div class="building-detail">
+    <div class="building-tab"><a>楼盘详情</a><a ng-click="changeHref('building/album?houseid='+ model.house_id)">楼盘相册</a><a ng-click="changeHref('building/housetype?houseid='+ model.house_id)" >户型展示</a></div>
+    <div id="js-content" class="editor-wraps detail-wraps">
+        <p Filter ng-bind-html="model.intro | trust:'html'" class="rich-text"></p>
+    </div>
+</div>
+<!--tab-bar-->
+<div class="building-tab building-bottom-tab"><a ng-click="goHref()"><i class="icon icon-surprise"></i>惊喜活动</a><a  ng-click="goMakemoney()"><i class="icon icon-appoiment" ></i>楼盘推荐</a><a ng-click="changeHref('building/appoint?id=' + model.house_id)"><i class="icon icon-note"></i>预约看房</a></div>

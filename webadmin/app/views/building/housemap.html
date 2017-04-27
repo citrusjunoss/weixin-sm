@@ -1,0 +1,28 @@
+<div class="map-page">
+    <div class="map-top">
+        <div ng-click="areaShow()" ng-class="{true :'top-extend', false :'top-retract'}[areaArrow]"><span>区域</span><i class="icon-arrow"></i></div>
+        <div ng-click="typeShow()" ng-class="{true :'top-extend', false :'top-retract'}[typeArrow]"><span>类型</span><i class="icon-arrow"></i></div>
+    </div>
+    <div class="area-extend" ng-show="areaArrow">
+        <div class="area-text">世茂，是以房地产开发为主的国际化企业集群。
+            致力于不断提升人居品质和居住品位，为城市的形象增添更多光彩目前，世茂正在开发的六十多个项目，分布于中国近四十个大中城市。</div>
+        <div class="area-list"><span ng-repeat="a in areaList" ng-bind="a.name" ng-class="{ 'active' : isCurrent == $index}" ng-click="areaChoose(a.id,$index)">不限</span></div>
+    </div>
+    <div class="type-extend" ng-show="typeArrow">
+        <div class="type-list"><span ng-repeat="t in typeList" ng-bind="t.name" ng-class="{ 'active' : isCurrent2 == $index}"  ng-click="typeChoose(t.id,$index)">不限</span></div>
+    </div>
+    <div class="house-map-detail" ng-click="goHref(mapHousedetail.house_id,mapHousedetail.city)" ng-show="bottomShow">
+        <img ng-src="{{mapHousedetail.img_url}}" >
+        <div class="house-map-detail-text" >
+            <div class="clearfix"><span class="map-detail-textname" ng-bind="mapHousedetail.house_name">万科广场</span><span class="map-detail-textprice"><span  ng-bind="mapHousedetail.price"></span>元/m<sup>2</sup></span></div>
+            <div ng-bind="mapHousedetail.addr">龙岗龙翔大道与德政路交汇处天誉营销中心</div>
+            <div class="map-detail-texttag"><span ng-repeat="t in mapHousedetail.brief" ng-bind="t">装修房</span></div>
+        </div>
+    </div>
+    <div class="map-wrap" >
+        <div id="container">
+
+        </div>
+
+    </div>
+</div>

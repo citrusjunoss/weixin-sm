@@ -1,0 +1,23 @@
+<div class="edit-wrap">
+	<form name="myForm" novalidate="novalidate">
+		<ul>
+			<li>
+				<i class="icon-username"></i>
+				<lable>姓名</lable>
+				<input type="text" ng-model="userInfo.realname" placeholder="请输入帐户名" ng-disabled="noOpen"/>
+			</li>
+			<li>
+				<i class="icon-phone"></i>
+				<lable>手机</lable>
+				<input type="text" placeholder="请输入手机号码" ng-model="userInfo.mobile" ng-disabled="noOpen" />
+			</li>
+			<li>
+				<i class="icon-idcard"></i>
+				<lable>经纪人类型</lable>
+        <select ng-model="selected" ng-options="o.id as o.title for o in brokerType" ng-disabled="noOpen">
+        </select>
+			</li>
+		</ul>
+		<a ng-click="submitInfo()" class="edit-btn bg-color-deep color-fff">保存</a>
+	</form>
+</div>

@@ -1,0 +1,50 @@
+<div class="mycto-wrap">
+  <div class="myclient-top">
+    <!-- 头像 (后台没有数据,若有需求再改)-->
+    <div class="myhead-portraitbg"></div>
+    <div class="myhead-portrait-box boderradius-50">
+      <img class="boderradius-50" ng-src="{{image_url}}" />
+    </div>
+  </div>
+  <form name="myForm" novalidate="novalidate">
+    <div class="myclient-bottom">
+      <div class="clearfix">
+        <p class="float-left myclient-info">
+          <span>姓</span><span>名</span>
+        </p>
+        <div class="float-left username-info-look" ng-bind="model.user_name"></div>
+
+      </div>
+      <div class="clearfix">
+        <p class="float-left  myclient-info">
+          <span>姓</span><span>别</span>
+        </p>
+
+        <div class="float-left username-info-sex" ng-bind="sex[model.gender]"></div>
+      </div>
+      <div class="clearfix">
+        <p class="float-left myclient-info">
+          <span>手机</span><span>号码</span>
+        </p>
+        <div class="float-left username-info-phone" ng-bind="model.mobile"></div>
+      </div>
+      <div class="clearfix">
+
+        <p class="float-left myclient-info">
+          <span>状</span><span>态</span>
+        </p>
+        <div class="float-left username-info-phone" ng-bind="showStatus[model.status-1]"></div>
+      </div>
+      <div class="clearfix">
+
+        <p class="float-left myclient-info">
+          <span>备</span><span>注</span>
+        </p>
+        <div class="float-left username-info-cont" ng-bind="model.remarks"></div>
+      </div>
+      <div class="submit boderradius-4" ng-click="submit()">
+        <span>完善客户资料</span>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+<div class="choose-city" >
+    <div class="choose-head">
+        选择城市
+    </div>
+    <div class="hot-title">热门城市</div>
+    <div class="hot-house">
+        <span ng-repeat="hot in regionList" ng-bind="hot.city_name" ng-click="chooseCity(hot.city_name)">东莞市</span>
+    </div>
+    <div class="hot-title">全部城市</div>
+    <ul class="area-ul">
+        <li class="city-li" ng-repeat="item in cityList">
+            <div class="area-head" ng-bind="item.region_name">
+                苏沪区
+            </div>
+            <div class="city-list">
+                <span ng-repeat="list in item.indexcity" ng-bind="list.city_name" ng-click="chooseCity(list.city_name)"></span>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,24 @@
+<div class="rank-wrap">
+	<!--头图-->
+	<div class="head-img">
+		<p>您距离上榜仅有一步之遥</p>
+		<p class="fontsize-2048">请再接再厉</p>
+	</div>
+	<!--rank title-->
+	<div class="rank-list">
+		<div class="rank-title">
+			<span class="rank-num">排名</span>
+			<span class="rank-name">姓名</span>
+			<span class="rank-count">成交套数</span>
+			<span class="rank-yuan">佣金/元</span>
+		</div>
+		<ul class="rank-list-data">
+			<li ng-repeat="item in rankList track by $index">
+				<span class="rank-num1" ng-bind="{{$index + 1}}"></span>
+				<span class="rank-name1 text-overflow" ng-bind="item.real_name"></span>
+				<span class="rank-count1" ng-bind="item.done_count"></span>
+				<span class="rank-yuan1" ng-bind="item.show_commission/100"></span>
+			</li>
+		</ul>
+	</div>
+</div>

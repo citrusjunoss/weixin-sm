@@ -1,0 +1,57 @@
+<style type="text/css"> 
+	input[type=datetime-local]::-webkit-inner-spin-button { visibility: hidden; }
+	input[type=datetime-local]::before{visibility: hidden;}
+</style>
+<div class="edit-wrap recommend-wrap" >
+	<form name="myform" novalidate="novalidate">
+		<div class="myform">
+			<ul>
+				<li>
+					<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+					<input type="text" placeholder="请输入姓名" ng-model="model.real_name" name="name"
+	               ng-pattern="/^[\u4E00-\u9FA5]{2,5}$/" required/>
+				</li>
+				<li> <i class="icon-phone" ></i>
+					<label>手机号码</label>
+					<input type="text" placeholder="请输入您的手机号码" ng-model="model.mobile" name="mobile" ng-pattern="/^1[34578]\d{9}$/" required />
+				</li>
+				<li> <i class="icon-build"></i>
+					<label>选择楼盘</label>
+					<div class="loupan" ng-click="isShow = true" ng-bind="count === 0 ? '请选择楼盘': '已选择' + count + '个楼盘'"></div>
+				</li>
+				
+				<li>
+					<label style="white-space:nowrap;">预约看房</label>
+					<input class="" style="padding-left: 0;flex: 11;" name="time" ng-model="model.order_time" id="input-time" type="datetime-local" />					
+				</li>
+				
+				<li>
+					<label>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</label>
+					<input type="text" ng-model="model.remark" placeholder="意向楼盘(选填)"/>
+				</li>
+			</ul>
+		</div>
+		<span class="recommend-tips fontsize-1024 color-948579">提示：请务必提交真实客户信息，若多次提交虚假信息，您的账号将被禁用！</span>
+		<a  class="edit-btn bg-color-deep color-fff" ng-Click="recommendSubmit()">马上推荐</a>
+		<!--复选框弹层-->
+		<div class="checkbox-wrap" ng-show="isShow" ng-click="boxHide($event)">
+			<div class="checkbox-content">
+				<div class="checkbox-title">
+					<input type="text" id="input-search-recomend" ng-model="ajaxData.search" placeholder="请输入楼盘名称" class="search-input">
+					<i class="search-icon search-icon-edit" ng-click="searchHouseList()"></i>
+				</div>
+				<ul class="houselist-scorll" id="houselist">
+					<li ng-repeat="item in houseList">
+						<input type="checkbox" class="checkbox-housename" ng-model="item.checked" ng-change="checkHouse(item.house_id)">
+						<span class="house-name house_name_list" ng-bind="item.house_name"></span>
+					</li>
+				</ul>
+				<div class="recommend-btn clearfix">	
+				   <div class="checkbox-btn fl" ng-click="chooseHouse()">确定</div>
+				   <div class="checkbox-btn fr" ng-click="cancleBtn()">取消</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+</div>

@@ -1,0 +1,67 @@
+
+<div class="client-detail-wrap edit-wrap" >
+	<div class="bg-color-deep client-detail-title">
+		<span ng-bind="clientInfo.real_name"></span>
+	</div>
+	<div class="clientDetail">
+		<ul class="client-detail">
+			<li> 
+				<label>联系电话</label>
+				<span ng-bind="clientInfo.mobile"></span>
+			</li>
+			<li> 
+				<label>意向楼盘</label>
+				<span ng-bind="clientInfo.house.house_name"></span>
+			</li>
+			<li>
+				<label>说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</label>
+				<span ng-bind="clientInfo.remark"></span>
+			</li>
+		</ul>
+		<img src="../../images/makemoney/invalid_icon.png" ng-show="isValid" class="invalid">
+	</div>
+	<div id="progressBar">
+		<!-- 进度条 -->
+		<div>
+			<span id="progress-length"></span>
+		</div>
+		<!-- 五个圆 -->
+		<span class="progress-circ no0"></span>
+		<span class="progress-circ no1"></span>
+		<span class="progress-circ no2"></span>
+		<span class="progress-circ no3"></span>
+		<span class="progress-circ no4"></span>
+		<span class="progress-circ no5"></span>
+		<span class="progress-circ no6"></span>
+		<ul class="progressBar-title" >
+			<li>
+				待审核
+				<p ng-bind="proTime[0].writetime"></p>
+			</li>
+			<li>
+				推荐中
+				<p ng-bind="proTime[1].writetime"></p>
+			</li>
+			<li>
+				已到访
+				<p ng-bind="proTime[2].writetime"></p>
+			</li>
+			<li>
+				已认购
+				<p ng-bind="proTime[3].writetime"></p>
+			</li>
+			<li>
+				已签约
+				<p ng-bind="proTime[4].writetime"></p>
+			</li>
+			<li>
+				部分结算
+				<p ng-bind="proTime[5].writetime"></p>
+			</li>
+			<li>
+				全部结算
+				<p ng-bind="proTime[6].writetime"></p>
+			</li>
+		</ul>
+	</div>
+</div>

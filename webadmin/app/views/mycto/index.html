@@ -1,0 +1,126 @@
+<div class="mycto-index-wrap">
+  <div class="mycto-index-top">
+    <!-- 头像 -->
+    <div class="index-head-portrait-box boderradius-50"><img class="boderradius-50"  ng-src="{{wxUserInfo.wxusersex.head_url}}"></div>
+    <div class="index-user-name" ng-bind="wxUserInfo.nick"></div>
+    <div class="index-user-info" ng-if="isStaff">
+      <span>员工编号 <i ng-bind="staffInfo.employee_id"></i></span>
+      <span>员工姓名 <i ng-bind="staffInfo.real_name"></i></span>
+    </div>
+    <div class="tuijian-people" ng-if="!isStaff && recommenpersion">
+      <span>推荐人 <i ng-bind="recommenpersion"></i></span>
+    </div>
+  </div>
+
+<div class="mycto-bottom">
+  <ul class="mycto-list">
+    <li ng-if="isStaff">
+      <a ng-click="changeHref('/mycto/clientlist')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon my-contant"></span>
+          </div>
+            <div class="con-wrap-title">我的客户</div>
+        </div>
+      </a>
+    </li>
+    <li ng-if="isStaff">
+      <a ng-click="changeHref('/mycto/qrcode')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon mycode"></span>
+          </div>
+          <div class="con-wrap-title">我的二维码</div>
+        </div>
+      </a>
+    </li>
+    <li ng-if="isStaff">
+      <a ng-click="changeHref('/mycto/scanrecord')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon myscanrcode"></span>
+          </div>
+          <div class="con-wrap-title">员工码扫描记录</div>
+        </div>
+      </a>
+    </li>
+    <li >
+      <a ng-click="changeHref('/mycto/attention')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon myhouse"></span>
+          </div>
+          <div class="con-wrap-title">我关注的楼盘</div>
+        </div>
+      </a>
+    </li>
+    <li >
+      <a ng-click="changeHref('/mycto/concerned')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon myhousekind"></span>
+          </div>
+          <div class="con-wrap-title">我关注的户型</div>
+        </div>
+      </a>
+    </li>
+    <li >
+      <a  ng-click="changeHref('/mycto/recordlist')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon myhouserecord"></span>
+          </div>
+          <div class="con-wrap-title">我的看房记录</div>
+        </div>
+      </a>
+    </li>
+    <li >
+      <a ng-click="changeHref('/mycto/myrecommend')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon mylike"></span>
+          </div>
+          <div class="con-wrap-title">我的推荐</div>
+        </div>
+      </a>
+    </li>
+    
+    <!--<li >
+      <a ng-click="changeHref('/mycto/myprize')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon myprize"></span>
+          </div>
+          <div class="con-wrap-title">我的奖品</div>
+        </div>
+      </a>
+    </li>
+    
+    <li >
+      <a ng-click="changeHref('/mycto/integralmall')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon integralmall"></span>
+          </div>
+          <div class="con-wrap-title">积分商城</div>
+        </div>
+      </a>
+    </li>-->
+    
+    <li ng-if="isStaff">
+      <a ng-click="changeHref('/mycto/newsList')">
+        <div class="con-wrap">
+          <div class="myctoicon-wrap">
+            <span class="myctoicon mycenter"></span>
+          </div>
+          <div class="con-wrap-title">资讯中心</div>
+        </div>
+      </a>
+    </li>
+
+  </ul>
+</div>
+</div>
+<script>
+  $('body').css('background','#f2f2f2');
+</script>

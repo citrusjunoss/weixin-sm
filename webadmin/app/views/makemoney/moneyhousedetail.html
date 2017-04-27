@@ -1,0 +1,11 @@
+<div class="active-rule">
+  <div class="active-rule-title" ng-bind="houseList.house_name"></div>
+  <p Filter id="js-content" ng-bind-html="houseDetail.agent_content| trust:'html'" class="rich-text"></p>
+
+  <!--loading-->
+  <div class="loadingBox" ng-style="isLoading" style="display:block;">
+    <img src="../../images/svg/three-dots.svg">
+  </div>
+</div>
+
+

@@ -1,0 +1,152 @@
+<!doctype html>
+<html ng-app="webApp">
+	<head>
+    <base href="/">
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<!-- build:css(.) styles/vendor.css -->
+		<!-- bower:css -->
+		<link rel="stylesheet" href="bower_components/Swiper/dist/css/swiper.css" />
+		<link rel="stylesheet" href="bower_components/iSlider/build/iSlider.min.css" />
+		<link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.css" />
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- build:css(.tmp) styles/main.css -->
+		<link rel="stylesheet" type="text/css" href="styles/reset.css" />
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/mycto.css">
+		<link rel="stylesheet" href="styles/makemoney.css">
+		<link rel="stylesheet" href="styles/personal_center.css">
+		<link rel="stylesheet" href="styles/highslide.css">
+		<link rel="stylesheet" href="styles/home_theme.css">
+		<link rel="stylesheet" href="styles/mobiscroll.custom.css">
+		<!--<link rel="stylesheet" type="text/css" href="styles/activity.css">-->
+		<!-- endbuild -->
+	</head>
+
+  <body>
+		<!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+		<!-- Add your site or application content here -->
+		<div class="container">
+			<div ui-view class="ui-wrap"></div>
+		</div>
+    <!--信息提示弹框-->
+	<div class="poplayer_box layer_type2" id="maskText" style="z-index:999999; display: none;">
+			<div class="poplayer_bg"></div>
+			<div class="poplayer_content">
+				<div class="poplayer_section">
+					<div class="layer_type layer_style">
+						<div class="layercont">
+							<div class="cart_p_icon" style="display: none;"><i class="icon ok_icon"></i></div>
+							<div class="layer_text"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--蒙层显示-->
+
+		<script src="http://map.qq.com/api/js?v=2.exp&key=4GIBZ-326R3-O5E3H-3EJKP-IJNYZ-SNFVV&libraries=drawing,geometry,autocomplete,convertor"></script>
+		<script src=" http://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+		<script src="scripts/ToSlideUp.js"></script>
+		<script src="scripts/pvCount.js"></script>
+		<!-- build:js(.) scripts/vendor.js -->
+		<!-- bower:js -->
+		<script type="text/javascript" src="scripts/jweixin.js"></script>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="scripts/zepto.min.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="bower_components/Swiper/dist/js/swiper.js"></script>
+		<script src="bower_components/distpicker/dist/distpicker.data.js"></script>
+		<script src="bower_components/distpicker/dist/distpicker.js"></script>
+		<script src="bower_components/iSlider/build/iSlider.min.js"></script>
+		<script src="bower_components/angular-swiper/dist/angular-swiper.js"></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<!-- build:js({.tmp,app}) scripts/scripts.js -->
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers/commonConst/commonConst.js"></script>
+		<script src="scripts/controllers/company/about.js"></script>
+		<script src="scripts/controllers/common/global.js"></script>
+		<script src="scripts/service/service.js"></script>
+		<script src="scripts/filters/filter.js"></script>
+		<script src="scripts/mobiscroll/mobiscroll.zepto.js"></script>
+		<script src="scripts/controllers/common/respond.js"></script>
+		<script src="scripts/controllers/common/geolocation.min.js"></script>
+		<script src="scripts/controllers/company/companyCtrl.js"></script>
+		<script src="scripts/controllers/company/welfareCtrl.js"></script>
+		<script src="scripts/controllers/company/contactCtrl.js"></script>
+		<script src="scripts/controllers/company/newsCtrl.js"></script>
+		<script src="scripts/controllers/building/indexCtrl.js"></script>
+		<script src="scripts/controllers/building/buildingListCtrl.js"></script>
+		<script src="scripts/controllers/building/chooseCityCtrl.js"></script>
+		<script src="scripts/controllers/building/searchHouseCtrl.js"></script>
+		<script src="scripts/controllers/building/houseAlbumCtrl.js"></script>
+		<script src="scripts/controllers/building/progressListCtrl.js"></script>
+		<script src="scripts/controllers/building/progressDetailCtrl.js"></script>
+		<script src="scripts/controllers/funs/funsActiveCtrl.js"></script>
+		<script src="scripts/controllers/building/mapCtrl.js"></script>
+		<script src="scripts/controllers/building/buildingDetailCtrl.js"></script>
+		<script src="scripts/controllers/building/buildingDetaiSharelCtrl.js"></script>
+		<script src="scripts/controllers/building/houseTypeCtrl.js"></script>
+		<script src="scripts/controllers/building/marketActiveCtrl.js"></script>
+		<script src="scripts/controllers/building/appointmentCtrl.js"></script>
+		<script src="scripts/directive/directive.js"></script>
+		<script src="scripts/controllers/mycto/attentionCtrl.js"></script>
+		<script src="scripts/controllers/mycto/clientDetailController.js"></script>
+		<script src="scripts/controllers/mycto/clientListController.js"></script>
+		<script src="scripts/controllers/mycto/completeClientController.js"></script>
+		<script src="scripts/controllers/mycto/concernedController.js"></script>
+		<script src="scripts/controllers/mycto/internalController.js"></script>
+		<script src="scripts/controllers/mycto/newsCenterController.js"></script>
+		<script src="scripts/controllers/mycto/newsController.js"></script>
+		<script src="scripts/controllers/mycto/qrCodeController.js"></script>
+		<script src="scripts/controllers/mycto/recordController.js"></script>
+		<script src="scripts/controllers/mycto/myrecommendController.js"></script>
+		<script src="scripts/controllers/mycto/staffBindCtrl.js"></script>
+		<script src="scripts/controllers/mycto/scanRecordCtrl.js"></script>
+		<script src="scripts/controllers/mycto/addClientController.js"></script>
+		<script src="scripts/controllers/mycto/allStatisticsController.js"></script>
+		<script src="scripts/controllers/mycto/activeStatisticsController.js"></script>
+		<script src="scripts/controllers/mycto/timeSelectController.js"></script>
+		<script src="scripts/controllers/mycto/myprizeController.js"></script>
+		<script src="scripts/controllers/commonConst/commonConst.js"></script>
+		<script src="scripts/controllers/makemoney/signupCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/rankCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/clientCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/clientDetailCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/personalCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/personalInfoCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/myRewardCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/enjoyHomeCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/makeMoneyCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/bindingCardCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/feedBackCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/editPersonalCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/recommendCtrl.js"></script>
+	    	<script src="scripts/controllers/building/buildingDetaiSharelCtrl.js"></script>
+	    	<script src="scripts/controllers/makemoney/commissionCtrl.js"></script>
+	    	<script src="scripts/controllers/makemoney/activeRuleCtrl.js"></script>
+		<script src="scripts/controllers/mycto/staffBindCtrl.js"></script>
+	    	<script src="scripts/controllers/mycto/scanRecordCtrl.js"></script>
+	    	<script src="scripts/controllers/mycto/addClientController.js"></script>
+		<script src="scripts/controllers/makemoney/commissionCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/makeMoneyChooseCityCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/makeMoneySearchHouseCtrl.js"></script>
+		<script src="scripts/controllers/makemoney/personalInfoEditCtrl.js"></script>
+		<script src="scripts/pvCount.js"></script>
+		<!-- endbuild -->
+	</body>
+
+</html>

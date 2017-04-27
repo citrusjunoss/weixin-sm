@@ -1,0 +1,80 @@
+ <style type="text/css">
+.float-left{float: left;width: 25%;}
+.float-right{float: right;width: 75%;}
+.history-header{line-height: 50px; height: 50px;text-align: center;font-size: 20px;}
+.history_item{line-height: 40px;height: 40px;}
+.history_item img{height: 40px;width: 40px;border-radius: 50%;}
+.history_item .win_prize{	line-height: 40px;	height: 40px;}
+.history_header{background-color: #C12217;	color: #fff;	height: 55px;	width: 75%;	line-height: 55px;	font-size: 30px;    margin: 0 auto;}
+.history_header div{position: relative;}
+.poplayer_section .layer_type{width: 75%;padding-top: 10px;}
+.no-data-view{margin: 0 auto;text-align: center;padding-top: 200px;}
+.no-data-view img{display: initial;}
+.float-right.win_prize input{height: 20px;width: 80%;padding-left: 5px;}
+ </style>
+ <div class="no-data-view" ng-if="prizeDatas.length==0">
+ 	<img src="../../images/mycto/zwjl.png" />
+ </div>
+ 
+<div class="data-list prize-new-list" ng-if="prizeDatas.length>0">
+	<div class="prize-title">
+		<span class="activityname">活动名称</span>
+		<span class="name">奖品名称</span>
+		<span class="createtime">中奖时间</span>
+		<span class="changetime">兑换时间</span>
+	</div>
+	<ul class="prize-list-data">
+		<li ng-repeat="item in prizeDatas">
+			<a>
+				<span class="activityname" ng-bind="item.activity_name"></span>
+				<span class="name" ng-bind="item.prizes_name"></span>
+				<span class="createtime" ng-bind="item.created* 1000 | date:'yyyy-MM-dd HH:mm:ss'"></span>
+				<span class="changetime" ng-bind="item.exchangetime* 1000 | date:'yyyy-MM-dd HH:mm:ss'"></span>
+			</a>
+		</li>
+		<!--<div class="data-nomore hide">没有更多数据</div>-->
+	</ul>
+</div>
+
+<!--未填写中奖信息弹层Start-->
+<div class="poplayer_box layer_type1"  ng-show="noUserPrizeDatas.length>0" >
+  <div class="poplayer_bg"></div>
+  <div class="poplayer_content">
+    <div class="poplayer_section">
+      <div class="layer_type layer_style history">
+      	<div class="history-header">请填写用户信息</div>
+        <div class="historycont">
+        	
+          <div class="history_item" >
+          	<div class="float-left" >
+          		姓名:
+          	</div>
+          	<div class="float-right win_prize">
+          		<input  ng-model="user.username" name="" id="" value="" />
+          	</div>
+          </div>
+           <div class="history_item"  >
+          	<div class="float-left" >
+          		手机号:
+          	</div>
+          	<div class="float-right win_prize">
+          		<input  ng-model="user.mobile" name="" id="" value="" />
+          	</div>
+          </div>
+           <div class="history_item"  >
+          	<div class="float-left" >
+          		地址:
+          	</div>
+          	<div class="float-right win_prize">
+          		<input  ng-model="user.address" name="" id="" value="" />
+          	</div>
+          </div>
+          
+         <div class="submit-btn" id="form_btn" ng-click="submitInfo()">提交</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--中奖信息弹层End-->

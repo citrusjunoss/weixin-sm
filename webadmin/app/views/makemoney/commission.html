@@ -1,0 +1,37 @@
+<div class="personal-wrap" >
+  <!--头部-->
+  <div class="personal-head">
+    <div class="personal-head-img">
+      <a href="makemoney/editpersonal"><img ng-src="{{wxUserInfo.wxusersex.head_url}}"/></a>
+    </div>
+    <p ng-bind="userInfo.realname"></p>
+    <p ng-bind="userType[userInfo.typeid]"></p>
+  </div>
+  <!--我的佣金-->
+  <div class="my-commission personal-nav" >
+    <div class="all-commission">
+      <div class="commission-num" ng-bind="allMoney/100">1720000</div>
+      <div class="fontsize-1280 color-948579">累计佣金/元</div>
+    </div>
+    <div class="other-commisson">
+      <div class="get-commission">
+        <div class="commission-num" ng-bind="userInfo.commission_payed/100">1720000</div>
+        <div class="fontsize-1280 color-948579">已发放佣金/元</div>
+      </div>
+      <div class="unget-commission">
+        <div class="commission-num" ng-bind="userInfo.commission/100">1720000</div>
+        <div class="fontsize-1280  color-948579">待发放佣金/元</div>
+      </div>
+    </div>
+		<span class="look-other fontsize-1280" ng-click="goHref(1)">
+			看别人得了多少佣金
+		</span>
+
+  </div>
+  <!--底部菜单-->
+  <div class="tab-bar">
+    <div ng-click="tabChange(1)" ng-class="{'bg-color-deep':status == 1}"><i class="icon-home iconm"></i>首页</div>
+    <div ng-click="tabChange(2)" ng-class="{'bg-color-deep':status == 2}"><i class="icon-client iconm"></i>我的客户</div>
+    <div ng-click="tabChange(3)" ng-class="{'bg-color-deep':status == 3}"><i class="icon-pcenter iconm"></i>个人中心</div>
+  </div>
+</div>

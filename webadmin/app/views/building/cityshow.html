@@ -1,0 +1,44 @@
+<!--轮播图-->
+<div class="swiper-container city-swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="item in imgData"><a ng-click="changeHref(item.link)"><img ng-src="{{item.img_url}}" /></a></div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<!--楼盘列表-->
+<ul class="house-list">
+    <li class="house-li" ng-repeat="item in bulidingList" >
+        <div class="house-img">
+            <img ng-src="{{item.img_url}}">
+            <div class="hot-tag"></div>
+            <div class="price-tag">均价 <span ng-bind="item.price">50000</span>元/m<sup>2</sup></div>
+        </div>
+        <div class="house-info">
+            <div class="house-name" ng-bind="item.house_name"></div>
+            <div class="house-detail"><span class="house-addr" ng-bind="item.addr">上海市青浦区 中青路新龙路路口</span><a ng-click="goHref(item.house_id)" class="detail-btn">了解详情 ></a></div>
+            <div class="house-tag"><span ng-repeat="b in item.brief" ng-bind="b"></span></div>
+        </div>
+    </li>
+    <li ng-if="bulidingList.length == 0">
+        <div class="disconcerned">
+            <div class="disconcerned-data">
+                <img src="../../images/mycto/icon4.png" alt="">
+                <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+            </div>
+        </div>
+    </li>
+</ul>
+<!--没有更多了-->
+<div class="is-bottom" ng-show="areaList.indexcity.length > 0">
+    <div class="bottom-title"><div class="bottom-bg"></div><span>到底了,查看其它城市吧</span></div>
+    <span class="addr-tag" ng-bind="areaList.region_name">华南区</span>
+    <ul class="addr-list">
+        <li ng-repeat="c in areaList.indexcity" ng-click="otherCity(c.city_name)">
+            <div class="city-img"><img ng-src="{{c.logo}}" alt=""></div>
+            <p ng-bind="c.city_name">广州</p>
+        </li>
+    </ul>
+</div>
+<script>
+    $('body').css('background','#fff');
+</script>

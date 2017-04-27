@@ -1,0 +1,13 @@
+<!-- 查看个人信息 -->
+<div class="info-view">
+	<p><label>姓　　名：</label><span ng-bind="brokerInfo.errmsg.data.realname"></span></p>
+	<p><label>手　　机：</label><span ng-bind="brokerInfo.errmsg.data.mobile"></span></p>
+	<p><label>类　　型：</label><span ng-bind="brokerType"></span></p>
+	<p ng-show="typeid == 1 || typeid == 2"><label>身&nbsp;&nbsp;份&nbsp;&nbsp;证：</label><span ng-bind="idnumber"></span></p>
+	<p  ng-show="typeid != 0"><label>所属城市：</label><span ng-bind="cityName"></span></p>
+	<p ng-show="typeid == 1 || typeid ==3 || typeid == 4"><label>楼　　盘：</label><span ng-bind="houseName"></span></p>
+	<p ng-show="typeid == 3"><label>合作公司：</label><span ng-bind="companyName"></span></p>
+	<p ng-show="typeid == 4"><label>所属公司：</label><span ng-bind="agencyName"></span></p>
+	<p ><label>注册时间：</label><span ng-bind="brokerTime"></span></p>
+	<div class="submit-btn" ng-click="changeHref('/personalInfo/edit')">修改个人信息</div>
+</div>

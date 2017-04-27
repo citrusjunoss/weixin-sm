@@ -1,0 +1,31 @@
+.new_home_wrap{position:relative;min-height:100%;padding-top:4%;background:url('../images/company/new_home_bg.jpg') no-repeat;background-size:cover;}
+.new_home_up,.new_home_down{border-radius:0.24rem;width:90%;margin:0 auto;position:relative;z-index:2;box-shadow:1px 1px 3px rgba(0,0,0,0.3);overflow:hidden;}
+.new_home_down{border-radius:0;margin:0.3rem auto;}
+.new_home_up .swiper-container{width:100%;height:3.44rem;border-bottom:1px solid #4c5890;}
+.new_home_wrap .link_item{display:block;padding:0 0.45rem;height:1.06rem;line-height:1.06rem;position:relative;background:rgba(255,255,255,0.1);font-size:0.34rem;color:#fff;}
+.new_home_wrap .link_item:active{background:rgba(255,255,255,0.2);border-left:0.13rem solid #ffffff;}
+.new_home_wrap .link_item:before,.new_home_wrap .link_item:after{ border-color: rgba(255,255,255,.3);}
+.new_home_wrap .link_item .link_icon{display:block;position:absolute;top:50%;right:1.55rem;width:0.64rem;height:0.64rem;margin-top:-0.32rem;background:url('../images/company/home_spr.png') no-repeat;background-size:1.77rem;}
+.new_home_down .link_item{float:left;width:50%;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.new_home_down .link_item .link_icon{right:0.18rem;}
+
+/* 图标 */
+.new_home_wrap .link_item:active .icon_about{background-position:-1.1rem 0;}
+.new_home_wrap .link_item .icon_renai{background-position:0 -1.18rem;}
+.new_home_wrap .link_item:active .icon_renai{background-position:-1.1rem -1.17rem;}
+.new_home_wrap .link_item .icon_news{background-position:0 -2.34rem;}
+.new_home_wrap .link_item:active .icon_news{background-position:-1.1rem -2.34rem;}
+.new_home_wrap .link_item .icon_service{width:0.66rem;background-position:0 -3.51rem;}
+.new_home_wrap .link_item:active .icon_service{background-position:-1.1rem -3.51rem;}
+.new_home_wrap .link_item .icon_house{background-position:0 -4.68rem;}
+.new_home_wrap .link_item:active .icon_house{background-position:-1.1rem -4.68rem;}
+.new_home_wrap .link_item .icon_business{background-position:0 -8.197rem;}
+.new_home_wrap .link_item:active .icon_business{background-position:-1.1rem -8.197rem;}
+.new_home_wrap .link_item .icon_hotel{background-position:0 -5.85rem;}
+.new_home_wrap .link_item:active .icon_hotel{background-position:-1.1rem -5.85rem;}
+.new_home_wrap .link_item .icon_property{background-position:0 -9.36rem;}
+.new_home_wrap .link_item:active .icon_property{background-position:-1.1rem -9.36rem;}
+.new_home_wrap .link_item .icon_park{background-position:0 -7.02rem;}
+.new_home_wrap .link_item:active .icon_park{background-position:-1.1rem -7.02rem;}
+.new_home_wrap .link_item .icon_more{background-position:0 -10.53rem;}
+.new_home_wrap .link_item:active .icon_more{background-position:-1.1rem -10.53rem;}

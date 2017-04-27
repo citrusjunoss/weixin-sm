@@ -1,0 +1,47 @@
+<!-- 我的奖励 -->
+<div class="my-reward">	
+	<div class="user-thumb">
+		<img src="images/makemoney/personal_center/banner.jpg" width="100%" height="auto" alt="">
+		<div class="user-info-basic">
+			<div class="user-avatar" ng-click="changeHref('personalCenter/info')">
+				<img ng-src="{{userInfo.head_url}}" width="80" height="80" alt="">
+			</div>
+			<h3 class="user-name" ng-bind="broker.realname"></h3>
+		</div>
+	</div>
+
+	<div class="tab">
+		<div class="tab-title tab-column-2 clearfix">
+			<a href="javascript:;" ng-class="{'tab-active': tabTitBonus}" ng-click="showTabBonus()">奖金</a>
+			<a href="javascript:;" ng-class="{'tab-active': tabTitPrize}" ng-click="showTabPrize()">奖品</a>
+		</div>
+
+		<div class="tab-con">
+			<!-- 奖金 -->
+			<div class="bonus" ng-show="tabTitBonus">
+				<div class="bonus-column">累计佣金{{ broker.commission + broker.commission_payed | number: 2 }}元</div>
+				<div class="bonus-column-2 clearfix">
+					<span>已发放佣金{{ broker.commission_payed }}元</span><span>待发放佣金{{ broker.commission }}元</span>
+				</div>
+			</div>
+			<!-- 奖品 -->
+			<div class="prize mt-10" ng-show="tabTitPrize">
+				<div class="prize-cell clearfix">
+					<div class="prize-item">
+						已发放<br><b ng-bind="broker.prize_count || 0"></b>个
+					</div>
+					<div class="prize-item">
+						待领取<br><b ng-bind="broker.not_prize_count || 0"></b>个
+					</div>
+				</div>
+
+				<div class="prize-empty mt-10" ng-if="broker.not_prize_count == 0">
+					<i class="icon-gift"></i>
+					<p>你还没获得任何奖励<br>赶快去推荐客户赚取奖励</p>
+				</div>
+
+				<a ng-click="changeHref('makemoney/client')" class="btn-view-customer">查看我的客户</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<div class="editor-wraps" >
+	<h2 ng-bind="news.title" style="text-align: center" cloak></h2>
+	<div class="news-date-wrap">
+		<div class="news-date">
+			<span ng-bind="news.writetime"></span>
+		</div>
+	</div>
+	<p id="js-content"  Filter ng-bind-html="news.content | trust:'html'"></p>
+	<div class="content-foot"></div>
+</div>
+<div class="disconcerned" ng-show="!news">
+	<div class="disconcerned-data">
+		<img src="../../images/mycto/icon4.png" alt="">
+		<p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+	</div>
+</div>

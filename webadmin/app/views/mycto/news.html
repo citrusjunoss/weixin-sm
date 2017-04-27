@@ -1,0 +1,29 @@
+<div class="mycto-loupan-wrap mycto-news-wrap">
+  <div class="attention-list">
+    <ul class="attention-detail">
+      <li class="clearfix listlou" ng-repeat="item in newsList track by $index" ng-click="goNewsCenter(item.news_id)" >
+
+          <div class="attention-detail-item ">
+            <span class="color-5f5f5f" ng-bind="item.title"></span>
+            <i class="link-btn"></i>
+            <p ng-bind="item.writetime"></p>
+
+          </div>
+
+      </li>
+      <li ng-if="newsList.length == 0">
+        <div class="disconcerned">
+          <div class="disconcerned-data">
+            <img src="../../images/mycto/icon4.png" alt="">
+
+            <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+          </div>
+          <div class="mycto-login-submit boderradius-4">
+            <a ng-click="changeHref('/building/index')" >点击浏览楼盘信息</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

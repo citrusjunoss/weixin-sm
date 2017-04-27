@@ -1,0 +1,98 @@
+<!--修改个人信息-->
+<style type="text/css">
+	.appoint-ul li input, .appoint-ul li select {
+    flex: 7;
+    -webkit-flex: 7;
+    border: 1px solid #ccc;
+    padding-left: .1rem;
+    height: .6rem;
+    font-size: .3rem;
+    }
+    .money-wrap{
+    	padding: 0.54rem 0.02rem;
+    }
+    
+</style>
+<div class="money-wrap" >
+	<!--默认-->
+	<div class="form-wrap" >
+		<form  name="myForm" novalidate="novalidate">
+			
+			<ul class="appoint-ul">
+				<li>
+					<span>姓&nbsp;&nbsp;名:</span>
+					<input type="text" placeholder="请输入您的姓名" ng-model="user.realname" name="name"
+             			ng-pattern="/^[\u4E00-\u9FA5]{2,5}$/" required/>
+				</li>
+				
+				<li>
+					<span>手机号:</span>
+					<input type="text"  ng-model="user.mobile" name="phone" ng-Change="changePhone()" placeholder="请输入您的手机号" ng-pattern="/^1[34578]\d{9}$/" required/>
+					
+				</li>
+				
+				<li ng-show="showsendbtn">
+					<span></span>
+					<div class="verification clearfix" style="flex: 7;-webkit-flex:7" >	
+						<input type="number" ng-disabled="false" placeholder="请输入验证码" ng-model="user.captcha" class="code fl"/>
+						<input type="button" value="点击获取验证码" ng-class="{'gray':is_gray}"  ng-click="sendCode()" class="get-code send-code-btn fr">
+					</div>
+				</li>
+				
+				<li>
+					<span>类&nbsp;&nbsp;型:</span>
+					<select ng-model="user.typeid" ng-change="changeAgentType()" ng-options="type.id as type.name  for type in agentTypes"></select>
+				</li>
+				
+				
+				<li ng-show="user.typeid != 0">
+					<span>所在城市:</span>
+					<select ng-model="user.city" ng-change="changeCity()" ng-options="city as city.city_name  for city in cityList" >
+						<option value="" selected >所在城市</option>
+					</select>
+				</li>
+				<li ng-show="user.typeid == 1 || user.typeid ==3|| user.typeid == 4">
+					<span>楼&nbsp;&nbsp;盘:</span>
+					<select ng-model="user.house_id" ng-change="changHouse()" ng-options="house.house_id as house.house_name  for house in houseList" >
+						<option value="" selected >选择楼盘</option>
+					</select>
+				</li>
+				
+				<li ng-show="user.typeid == 4">
+					<span>所属公司:</span>
+					<select ng-model="user.agency_id" ng-options="type.agency_id as type.agency_name  for type in agencyList" >
+						<option value="" selected>所属公司</option>
+					</select>
+				</li>
+				
+				<li ng-show="user.typeid == 3">
+					<span>合作公司:</span>
+					<select ng-model="user.company_id" ng-options="type.company_id as type.company_name  for type in partnerList" >
+						<option value="" selected>选择合作公司</option>
+					</select>
+				</li>
+				
+				<li ng-show="user.typeid == 1|| user.typeid == 2">
+					<span>身份证:</span>
+					<input type="text" placeholder="请填写您的身份证号码"  ng-disabled="idNumberDisable"  ng-model="user.idnumber">
+				</li>
+			</ul>
+			 
+		<div class="submit-btn" ng-click="submitInfo()">提交</div>
+	</form>
+</div>
+
+<div class="weui_dialog_alert" id="dialog2" ng-show="isTips">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">温馨提示</strong></div>
+        <div class="weui_dialog_bd" ng-if="user.typeid == 5">恭喜您已修改成功！赶紧推荐客户吧！</div>
+        <div class="weui_dialog_bd" ng-if="user.typeid !== 5">您已提交成功！请等待审核，审核期间也可推荐客户！</div>
+        <div class="weui_dialog_ft tline">
+            <a href="javascript:;" class="weui_btn_dialog primary" ng-click="TipClick()">确定</a>
+        </div>
+    </div>
+</div> 
+
+
+</div>

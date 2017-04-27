@@ -1,0 +1,68 @@
+<div class="money-wrap" >
+	<!--默认-->
+
+	<div class="form-wrap" >
+		<form  name="myForm" novalidate="novalidate">
+			<select ng-model="user.typeid" ng-change="changeAgentType()" ng-options="type.id as type.name  for type in agentTypes"></select>
+			
+			<input type="text" placeholder="请输入您的姓名" ng-model="user.realname" name="name"
+             ng-pattern="/^[\u4E00-\u9FA5]{2,5}$/" required/>
+			<!--世贸业主-->
+			<select ng-model="user.city" ng-change="changeCity()" ng-options="city as city.city_name  for city in cityList" ng-show="user.typeid != 0">
+				<option value="" selected >所在城市</option>
+			</select>
+			<select ng-model="user.house_id" ng-change="changHouse()" ng-options="house.house_id as house.house_name  for house in houseList" ng-show="user.typeid == 1 || user.typeid ==3|| user.typeid == 4">
+				<option value="" selected >选择楼盘</option>
+			</select>
+			<!--世贸合作方-->
+			<select ng-model="user.company_id"
+					ng-options="type.company_id as type.company_name  for type in partnerList"
+					ng-show="user.typeid == 3">
+				<option value="" selected>选择合作公司</option>
+			</select>
+			<!--中介公司-->
+			<select ng-model="user.agency_id" ng-options="type.agency_id as type.agency_name  for type in agencyList"
+					ng-show="user.typeid == 4">
+				<option value="" selected>所属公司</option>
+			</select>
+			<input type="text" placeholder="请填写您的身份证号码" ng-show="user.typeid == 1|| user.typeid == 2" ng-model="user.idnumber">
+			<input type="text"  ng-model="user.mobile" name="phone" placeholder="请输入您的手机号" ng-pattern="/^1[34578]\d{9}$/" required/>
+			<div class="verification clearfix">	
+				<input type="number" ng-disabled="false" placeholder="请输入验证码" ng-model="user.captcha" class="code fl"/>
+				<input type="button" value="点击获取验证码" ng-class="{'gray':is_gray}"  ng-click="sendCode()" class="get-code send-code-btn fr">
+			</div>
+		<div  class="sign-tips clearfix">
+			<span class="isChoose fl" ng-click="isChoose = !isChoose">
+				<span class="cir" ng-show="isChoose"></span>
+			</span>
+			<span class="agree_register" ng-click="clauseShow()" >我同意注册条款</span>
+		</div>
+		<div class="submit-btn" ng-click="submitInfo()">确认</div>
+	</form>
+</div>
+<div class="register-layer" ng-if="is_show_layer">
+	<!--256*428-->
+	<div class="clause">
+		<div class="clause-title">注册条款</div>
+		<div class="clause-content">
+			<p id="js-content" Filter ng-bind-html="ruleText.rule | trust:'html'"></p>
+		</div>
+		<div class="clause-btn" ng-click="agreeClause()">同意</div>
+	</div>
+</div>
+
+
+<div class="weui_dialog_alert" id="dialog2" ng-show="isTips">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">温馨提示</strong></div>
+        <div class="weui_dialog_bd" ng-if="user.typeid == 5">恭喜您已注册成功！赶紧推荐客户吧！</div>
+        <div class="weui_dialog_bd" ng-if="user.typeid !== 5">您已注册成功！请等待审核，审核期间也可推荐客户！</div>
+        <div class="weui_dialog_ft tline">
+            <a href="javascript:;" class="weui_btn_dialog primary" ng-click="TipClick()">确定</a>
+        </div>
+    </div>
+</div>
+
+
+</div>

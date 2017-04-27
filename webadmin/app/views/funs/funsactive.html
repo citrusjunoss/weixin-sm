@@ -1,0 +1,71 @@
+<div class="city-wrap clearfix">
+    <div class="addr-info"><span class="logo"></span><a  ng-click="chooseCityCom()" class="addr" ng-bind="locationCity">深圳</a><span class="down-arrow"></span></div>
+</div>
+<div class="funsactive-page">
+    <div class="funs-tab">
+        <div ng-class="{true: 'v-active', false: 'v-inactive'}[status.S]" ng-click="activeChange('S')">微活动</div>
+        <div ng-class="{true: 'v-active', false: 'v-inactive'}[status.A]" ng-click="activeChange('A')">微预约</div>
+        <div ng-class="{true: 'v-active', false: 'v-inactive'}[status.M]" ng-click="activeChange('M')">微杂志</div>
+    </div>
+    <div class="funs-search" ng-show="status.A || status.S">
+        <select  ng-options="city.house_id as city.house_name for city in houseList" ng-model="houseid" ng-change="chooseVAppoint()"></select>
+    </div>
+    <!--微杂志列表-->
+    <ul class="funsactive-list" ng-show="status.M" when-scrolled="activeType.M()">
+        <li ng-repeat="m in MList" ng-click="goMDetail(m.id,m.deleted)">
+            <div class="funsactive-img"><img ng-src={{m.face.file_cdn_path}}></div>
+            <div class="funsactive-info">
+                <p ng-bind="m.name">上海世贸儿童乐园盛大开业</p>
+                <p ng-bind="m.created*1000 |date:'yyyy-MM-dd'"></p>
+            </div>
+            <div class="lost-time" ng-show="m.end_time < nowTime">已过期</div>
+        </li>
+        <li ng-show="isNodataM">
+            <div class="disconcerned">
+                <div class="disconcerned-data">
+                    <img src="../../images/mycto/icon4.png" alt="">
+                    <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+   <!--微预约列表-->
+    <ul class="funsactive-list" ng-show="status.A" when-scrolled="activeType.A()">
+        <li ng-repeat="v in AList"  ng-click="goADetail(v.id,v.deleted)">
+            <div class="funsactive-img"><img ng-src="{{v.wxImagetxtReply.wxImagetxtReplyItems[0].documentLib.file_cdn_path}}"></div>
+            <div class="funsactive-info">
+                <p ng-bind="v.title">上海世贸儿童乐园盛大开业</p>
+                <p ng-bind="v.created * 1000 |date:'yyyy-MM-dd'"></p>
+            </div>
+            <div class="lost-time" ng-show="v.end_time < nowTime">已过期</div>
+        </li>
+        <li ng-show="isNodataA">
+            <div class="disconcerned">
+                <div class="disconcerned-data">
+                    <img src="../../images/mycto/icon4.png" alt="">
+                    <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <!--惊喜活动列表-->
+    <ul class="funsactive-list" ng-show="status.S" when-scrolled="activeType.S()">
+        <li ng-repeat="S in SList"  ng-click="goSDetail(S.id,S.deleted,S.houseActivityRelation.house_id,S.end_time)">
+            <div class="funsactive-img"><img ng-src="{{S.startImageTxt.wxImagetxtItem.documentLib.file_cdn_path}}"></div>
+            <div class="funsactive-info">
+                <p ng-bind="S.activity_name">上海世贸儿童乐园盛大开业</p>
+                <p ng-bind="S.created * 1000 |date:'yyyy-MM-dd'"></p>
+            </div>
+            <div class="funshouse-name" ng-bind="S.houseActivityRelation.house.house_name"></div>
+            <div class="lost-time" ng-show="S.end_time < nowTime">已过期</div>
+        </li>
+        <li ng-show="isNodataS">
+            <div class="disconcerned">
+                <div class="disconcerned-data">
+                    <img src="../../images/mycto/icon4.png" alt="">
+                    <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

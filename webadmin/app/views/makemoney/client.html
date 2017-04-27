@@ -1,0 +1,121 @@
+<div class="client-wrap">
+	<div class="search-client">
+		<input type="text" ng-model="keyword" placeholder="请输入姓名或手机号码"/> <i class="search-icon2" ng-click="clientFilterFn(keyword)"></i>
+	</div>
+
+	<div class="client-lists">
+			<div class="client-head">
+				<span ng-class="{'choose': clientEffectCon}" ng-click="showClientEffect()">有效客户</span>
+				<span ng-class="{'choose': clientNewCon}" ng-click="showClientNew()">新客户</span>
+				<span ng-class="{'choose': clientInvalidCon}" ng-click="showClientInvalid()">无效客户</span>
+			</div>
+			<div class="client-con mt-10">
+				<!-- 有效客户 -->
+				<div class="client-effect" ng-show="clientEffectCon">
+					<div class="data-empty" ng-if="dataEmptyEffect">
+						<img src="../../images/makemoney/icon_9.png"/>
+						<p class="color-ccc client-status-m">您还没有有效客户</p>
+						<p class="color-ccc client-status-c">赶快去推荐吧！</p>
+						<div class="no-data-btn">
+							<a  ng-click="changeHref('makemoney/makemoney')">查看在销楼盘</a>
+							<a  ng-click="changeHref('makemoney/recommend')">推荐好友</a>
+						</div>
+					</div>
+					<div class="data-list client-effect-list" ng-if="!dataEmptyEffect">
+
+						<div class="client-title">
+							<span class="client-name">姓名</span>
+							<span class="client-mobile">电话</span>
+							<span class="client-housename">意向楼盘</span>
+						</div>
+
+						<ul class="client-list-data" when-scrolled="loadMoreEffect()" style="padding-bottom: 100px;">
+							<li ng-repeat="item in itemsEffect">
+								<a ng-click="changeHref('makemoney/clientdetail?id=' + item.id)">
+									<span class="client-name1" ng-bind="item.real_name"></span>
+									<span class="client-mobile1" ng-bind="item.mobile"></span>
+									<span class="client-housename1" ng-bind="item.house.house_name"></span>
+								</a>
+							</li>
+							<div class="data-nomore" ng-show="dataEffectNoMore">没有更多数据</div>
+						</ul>
+					</div>
+				</div>
+				<!-- 新客户 -->
+				<div class="client-new" ng-show="clientNewCon">
+					<div class="data-empty" ng-if="dataEmptyNew">
+						<img src="../../images/makemoney/icon_9.png"/>
+						<p class="color-ccc client-status-m">您还没有推荐新客户</p>
+						<p class="color-ccc client-status-c">赶快去推荐吧！</p>
+						<div class="no-data-btn">
+							<a  ng-click="changeHref('makemoney/makemoney')">查看在销楼盘</a>
+							<a  ng-click="changeHref('makemoney/recommend')">推荐好友</a>
+						</div>
+					</div>
+					<div class="data-list client-new-list" ng-if="!dataEmptyNew">
+						<div class="client-title">
+							<span class="client-name">姓名</span>
+							<span class="client-mobile">电话</span>
+							<span class="client-housename">意向楼盘</span>
+						</div>
+
+						<ul class="client-list-data" when-scrolled="loadMoreNew()" style="padding-bottom: 100px;">
+							<li ng-repeat="item in itemsNew">
+								<a ng-click="changeHref('makemoney/clientdetail?id=' + item.id)">
+									<span class="client-name1" ng-bind="item.real_name"></span>
+									<span class="client-mobile1" ng-bind="item.mobile"></span>
+									<span class="client-housename1" ng-bind="item.house.house_name"></span>
+								</a>
+							</li>
+							<div class="data-nomore" ng-show="dataNewNoMore">没有更多数据</div>
+						</ul>
+					</div>
+				</div>
+				<!-- 无效客户 -->
+				<div class="client-invalid" ng-show="clientInvalidCon">
+					<div class="data-empty" ng-if="dataEmptyInvalid">
+						<img src="../../images/makemoney/icon_9.png"/>
+						<p class="color-ccc client-status-m">暂无无效客户</p>
+						<p class="color-ccc client-status-c">赶快去推荐吧！</p>
+						<div class="no-data-btn">
+							<a  ng-click="changeHref('makemoney/makemoney')">查看在销楼盘</a>
+							<a  ng-click="changeHref('makemoney/recommend')">推荐好友</a>
+						</div>
+					</div>
+					<div class="data-list client-invalid-list" ng-if="!dataEmptyInvalid">
+						<div class="client-title">
+							<span class="client-name">姓名</span>
+							<span class="client-mobile">电话</span>
+							<span class="client-housename">意向楼盘</span>
+						</div>
+						<ul class="client-list-data" when-scrolled="loadMoreInvalid()" style="padding-bottom: 100px;">
+							<li ng-repeat="item in itemsInvalid">
+								<a ng-click="changeHref('makemoney/clientdetail?id=' + item.id)">
+									<span class="client-name1" ng-bind="item.real_name"></span>
+									<span class="client-mobile1" ng-bind="item.mobile"></span>
+									<span class="client-housename1" ng-bind="item.house.house_name"></span>
+								</a>
+							</li>
+							<div class="data-nomore" ng-show="dataInvalidNoMore">没有更多数据</div>
+
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<div class="tab-bar">
+  <div ng-click="tabChange(1)"  >
+    <i class="icon-home iconm"></i>
+    首页
+  </div>
+  <div ng-click="tabChange(2)" class="bg-color-select">
+    <i class="icon-client iconm"></i>
+    我的客户
+  </div>
+  <div ng-click="tabChange(3)" >
+    <i class="icon-pcenter iconm"></i>
+    个人中心
+  </div>
+</div>

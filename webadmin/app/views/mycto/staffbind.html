@@ -1,0 +1,27 @@
+<div class="mycto-login-wrap">
+  <!--提交表单开始-->
+  <div class="color-5f5f5f mycto-login-title">将您的员工账号与微信进行绑定</div>
+  <div class="appoint-form">
+    <form name="myForm" novalidate="novalidate">
+      <div class="mycto-login-account">
+
+          <i class="color-5f5f5f ">账户</i>
+          <input type="text" class="boder-1" ng-model="user.login_name" placeholder="请输入您的账户名" name="account" required/>
+
+      </div>
+      <div class="mycto-login-account">
+
+          <i class="color-5f5f5f">密码</i>
+          <input type="password" class="boder-1" name="password" ng-model="user.pwd" placeholder="请输入您的密码" required/>
+
+      </div>
+
+    </form>
+    <div class="mycto-login-submit boderradius-4" ng-click="saveBtn()">确认</div>
+  </div>
+  <div class="bind-bottom">
+    <p>员工账号为世茂后台账号</p>
+    <p>请向系统管理员或上级询要账号密码</p>
+  </div>
+  <!--提交表单结束-->
+</div>

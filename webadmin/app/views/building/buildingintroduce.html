@@ -1,0 +1,20 @@
+<div class="company-wrap building-introduce">
+	<!--详情头部开始-->
+	<div class="detail-header">
+		<div class="detail-info">
+			<span ng-bind="model.house_name"></span>
+			<span ng-bind="model.brief"></span>
+		</div>
+		<span class="detail-header-add" ng-bind="province"></span>
+	</div>
+	<!--详情头部结束-->
+	<!--富文本填充区域开始-->
+		<p ng-bind="model.intro"></p>
+		<!--<p></p>
+		<img src="" alt="" />
+		<p></p>-->
+	<!--富文本填充结束开始-->
+  <div class="loadingBox" ng-style="isLoading" style="display:block;">
+    <img src="../../images/svg/three-dots.svg">
+  </div>
+</div>

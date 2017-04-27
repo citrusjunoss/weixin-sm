@@ -1,0 +1,28 @@
+<div class="mycto-loupan-wrap">
+  <div class="attention-list">
+    <ul class="attention-detail">
+      <li class="clearfix listlou" ng-repeat="item in scanList track by $index" ng-click="checkStatus(item.wxusersex.parent_employee_id,item.user_id)" >
+          <div class="attention-detail-item scancode-detail-item">
+            <img class="boderradius-50" ng-src="{{item.wxusersex.head_url}}">
+            <span class="color-5f5f5f" ng-bind="item.wxusers.nick"></span>
+            <i class="scan-codepa">扫描了你的员工码</i>
+            <i class="link-btn"></i>
+            <p class="link-btns" ng-bind="item.created_time"></p>
+          </div>
+
+      </li>
+      <li ng-if="scanList.length == 0">
+        <div class="disconcerned">
+          <div class="disconcerned-data">
+            <img src="../../images/mycto/icon4.png" alt="">
+
+            <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+          </div>
+          <div class="mycto-login-submit boderradius-4">
+            <a ng-click="changeHref('/building/index')">点击浏览楼盘信息</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

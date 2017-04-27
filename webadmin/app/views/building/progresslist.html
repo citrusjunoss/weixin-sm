@@ -1,0 +1,35 @@
+<div class="progress-list">
+	<div class="progress-head">
+		<div class="house-head-img"><img ng-src="{{progressInfo.img_url}}" alt=""></div>
+		<div class="house-head-name" ng-bind="progressInfo.house.house_name">公园里</div>
+	</div>
+	<div class="house-time">
+		<div class="progress-title">
+			收房时间
+		</div>
+		<div class="house-time-info" ng-bind="progressInfo.finish_time">
+		</div>
+	</div>
+	<div class="project-progress">
+		<div class="progress-title">
+			项目动态跟踪
+		</div>
+		<ul class="project-progress-ul">
+			<li class="active" ng-repeat="i in progressInfo.projectprogress" ng-click="checkDetail(i.id)">
+				<span class="project-dot"></span>
+				<div class="project-progress-left">
+					<div class="project-progress-info" ng-bind="i.brief">
+						各楼的工程都在有序进行，主体结构施工中，已完成7-14层，局部砌体施工。
+					</div>
+					<div class="project-progress-time" ng-bind="i.writetime">
+						2016-11-04 22:53:22
+					</div>
+				</div>
+				<div class="project-progress-right">
+					<img ng-src="{{i.img_url}}" alt="">
+					<img class="icon-img" src="../images/cityshow/icon-img.png" alt="">
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

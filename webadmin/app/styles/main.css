@@ -1,0 +1,1340 @@
+.container {
+	position: relative;
+}
+
+
+/*企业首页*/
+
+.nav-wrap {
+	width: 100%;
+	height: 6.15rem;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	padding: .15rem;
+}
+
+.nav-wrap-1 {
+	flex: 1;
+	-webkit-flex: 1;
+	margin-bottom: .15rem;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.nav {
+	flex: 1;
+	-webkit-flex: 1;
+	margin-right: .15rem;
+	color: #fff;
+	position: relative;
+}
+
+.nav:nth-last-of-type(1) {
+	margin-right: 0;
+}
+
+.nav-wrap-1 .nav span,
+.nav-2 .nav span,
+.nav-wrap-2>a:nth-of-type(1) span {
+	position: absolute;
+	bottom: .15rem;
+	right: .15rem;
+}
+
+.nav-wrap-1 .nav:nth-of-type(1) {
+	background: #e84946 url("../images/company/globe.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-wrap-1 .nav:nth-of-type(2) {
+	background: #ab18b1 url("../images/company/heart.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-wrap-1 .nav:nth-of-type(3) {
+	background: #009c8b url("../images/company/house.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-wrap-2 {
+	flex: 2;
+	-webkit-flex: 2;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.nav-wrap-2>a:nth-of-type(1) {
+	background: #179717 url("../images/company/yewu.png") .15rem .15rem/.56rem .56rem no-repeat;
+	flex: 1;
+	-webkit-flex: 1;
+	margin-right: .15rem;
+}
+
+.nav-2 {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+
+.nav-2 .nav {
+	margin: 0 0 .15rem 0;
+}
+
+.nav-2:nth-of-type(1) .nav:nth-of-type(1) {
+	background: #0ca0b5 url("../images/company/house2.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-2:nth-of-type(1) .nav:nth-of-type(2) {
+	background: #0ca0b5 url("../images/company/plane.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-2:nth-of-type(1) .nav:nth-of-type(3) {
+	background: #0ca0b5 url("../images/company/park.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-2:nth-of-type(2) .nav:nth-of-type(1) {
+	background: #0ca0b5 url("../images/company/shangye.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-2:nth-of-type(2) .nav:nth-of-type(2) {
+	background: #0ca0b5 url("../images/company/house3.png") .15rem .15rem/.56rem .56rem no-repeat;
+}
+
+.nav-2:nth-of-type(2) .nav:nth-of-type(3) {
+	background: #0ca0b5 url("../images/company/more.png") .15rem .15rem/.75rem .56rem no-repeat;
+}
+
+.nav-2 .nav:nth-last-of-type(1) {
+	margin: 0;
+}
+
+
+/*关于世贸*/
+
+
+/*仁爱世贸*/
+.public-wrap {
+	background: #fff;
+}
+.public-wrap p {
+	text-indent: 2em;
+}
+.public-wrap h2{
+	text-align: center;
+	font-size: .3rem;
+	font-weight: bold;
+	margin: .2rem 0;
+}
+
+
+.public-wrap img {
+	width: 100%;
+	margin: .2rem 0;
+}
+.public-wrap>img {
+	margin: 0;
+}
+.public-content {
+	padding: .3rem;
+}
+
+
+/*城市展厅*/
+
+.city-wrap {
+	width: 100%;
+	background: #fff;
+	padding: .1rem .3rem;
+	line-height: .7rem;
+	position: relative;
+	z-index: 100;
+}
+
+.city-wrap span {
+	display: inline-block;
+	height: .7rem;
+	vertical-align: top;
+}
+
+.city-wrap .logo {
+	height: .7rem;
+	width: 1.68rem;
+	display: inline-block;
+	background: url("../images/cityshow/logo.png") 0 0 /100% 100% no-repeat;
+	margin-right: .2rem;
+}
+
+.city-wrap .down-arrow {
+	height: .7rem;
+	width: .5rem;
+	background: url("../images/cityshow/down-arrow.png") 0 0 /100% 100% no-repeat;
+}
+
+.addr-info {
+	float: left;
+}
+
+.search-info {
+	float: right;
+}
+
+.search-info .search-city {
+	height: .7rem;
+	width: .5rem;
+	background: url("../images/cityshow/search-btn.png") 0 0/ 100% 100% no-repeat;
+}
+
+.search-info .map-addr {
+	display: inline-block;
+	margin-left: .25rem;
+	width: .5rem;
+	height: .7rem;
+	background: url("../images/cityshow/map-btn.png") 0 0/ 100% 100% no-repeat;
+	vertical-align: top;
+}
+
+.house-list {
+	padding-top: .15rem;
+	background: #f2f2f2;
+}
+
+.house-list li {
+	background: #fff;
+	margin-bottom: .15rem;
+}
+
+.house-img {
+	width: 100%;
+	height: 3.3rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.house-img img {
+	width: 100%;
+}
+
+.hot-tag {
+	width: .8rem;
+	height: .9rem;
+	position: absolute;
+	left: .15rem;
+	top: 0;
+	background: url("../images/cityshow/hot-tag.png") 0 0 /100% 100% no-repeat;
+}
+
+.price-tag {
+	position: absolute;
+	left: 0;
+	bottom: .5rem;
+	-webkit-border-bottom-right-radius: 7rem;
+	border-bottom-right-radius: 7rem;
+	-webkit-border-top-right-radius: 7rem;
+	border-top-right-radius: 7rem;
+	background: rgba(0, 0, 0, .5);
+	color: #fff;
+	padding: .05em .3rem;
+}
+
+.house-info {
+	padding: .1rem .3rem;
+}
+
+.house-name {
+	font-size: .32rem;
+	font-weight: bold;
+}
+
+.house-detail {
+	width: 100%;
+	line-height: .55rem;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.house-addr {
+	-webkit-flex: 20;
+	flex: 20;
+	color: #6D6A6A;
+	display:block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.detail-btn {
+	-webkit-flex: 9;
+	flex: 9;
+	height: .7rem;
+	line-height: .7rem;
+	background: #ec4d4d;
+	color: #fff;
+	text-align: center;
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+}
+
+.house-tag span {
+	padding: 0 .1rem;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin: .03rem .1rem .05rem 0;
+	display: inline-block;
+	font-size: .24rem;
+}
+
+.house-tag span:nth-of-type(2n+1) {
+	border: 1px solid #4c99e0;
+	color: #4c99e0;
+}
+
+.house-tag span:nth-of-type(2n) {
+	border: 1px solid #ffb400;
+	color: #ffb400;
+}
+
+.bottom-title {
+	width: 100%;
+	height: .55rem;
+	line-height: .55rem;
+	position: relative;
+	text-align: center;
+}
+
+.bottom-bg {
+	height: .275rem;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid #ccc;
+	z-index: 2;
+}
+
+.bottom-title span {
+	padding: .05rem .3rem;
+	background: #f2f2f2;
+	position: relative;
+	font-size: .24rem;
+	color: #ccc;
+	z-index: 3;
+}
+
+.addr-tag {
+	background: #4c99e0;
+	font-size: .26rem;
+	color: #fff;
+	-webkit-border-radius: .2rem;
+	border-radius: .2rem;
+	padding: .1rem .2rem;
+	margin-left: .3rem;
+}
+
+.addr-list {
+	list-style: none;
+	padding: .2rem .3rem;
+}
+
+.addr-list li {
+	display: inline-block;
+	text-align: center;
+	margin-right: .4rem;
+}
+
+.addr-list li:nth-of-type(5n) {
+	margin-right: 0;
+}
+
+.city-img {
+	width: 1rem;
+	height: 1rem;
+	overflow: hidden;
+	-webkit-border-radius: .1rem;
+	border-radius: .1rem;
+}
+.addr-list li>p{
+	font-size: .24rem;
+	color: #6D6A6A;
+}
+.city-img img {
+	height: 100%;
+}
+
+.swiper-slide img {
+	width: 100%;
+}
+
+
+/*搜索蒙层*/
+
+.search-box {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #f2f2f2;
+	z-index: 100;
+}
+
+.search-head {
+	background: #fff;
+	padding: .2rem .3rem;
+	position: relative;
+}
+
+.house-search {
+	display: inline-block;
+	width: 5.7rem;
+	height: .7rem;
+	border: 0;
+	font-size: .3rem;
+	background: #f2f2f2;
+	border-radius: .3rem;
+	-webkit-border-radius: .3rem;
+	padding-left: .2rem;
+	margin-right: .2rem;
+}
+
+.hot-title {
+	padding: .2rem .3rem;
+}
+
+.hot-house {
+	background: #fff;
+	padding: .2rem .3rem;
+}
+
+.hot-house span,
+.city-list span {
+	display: inline-block;
+	padding: .05rem .2rem;
+	border-radius: .2rem;
+	-webkit-border-radius: .2rem;
+	border: 1px solid #ccc;
+	margin: .2rem .2rem .2rem 0;
+	font-size: .24rem;
+    	color: #666;
+}
+
+
+/*选择城市*/
+
+.choose-city {
+	background: #f2f2f2;
+}
+
+.choose-head {
+	text-align: center;
+	padding: .2rem;
+	background: #fff;
+}
+
+.area-ul {
+	padding: .3rem;
+	background: #fff;
+}
+
+.area-head {
+	border-bottom: 1px solid #d1d1d1;
+	padding: .1rem 0;
+}
+
+
+/*楼盘详情*/
+
+.house-detail-wrap {
+	background: #fff;
+	position: relative;
+}
+.house-detail-wrap .share-massage {
+	position: absolute;
+	top: 2rem;
+	left: 0;
+	padding: .1rem .3rem;
+	border-bottom-right-radius: .3rem;
+	-webikit-border-bottom-right-radius: .3rem;
+	border-top-right-radius: .3rem;
+	-webikit-border-top-right-radius: .3rem;
+	z-index: 100;
+	background: rgba(0,0,0,.6);
+	color: #fff;
+}
+
+.house-detail-wrap .house-info {
+	display: flex;
+	display: -webkit-flex;
+}
+
+.house-info-left {
+	flex: 9;
+	-webkit-flex: 9;
+}
+
+.house-info-right {
+	flex: 4;
+	-webkit-flex: 4;
+}
+.house-info-right div:first-child {
+	margin-bottom: 0.2rem;
+}
+.go-here {
+	color: #ec4d4d;
+	margin-left: .1rem;
+	text-decoration: underline;
+}
+
+.house-info-right {
+	padding-top: .3rem;
+}
+
+.house-info-left .house-tag {
+	margin-top: .1rem;
+}
+
+.icon {
+	width: .34rem;
+	height: .34rem;
+	display: inline-block;
+	margin-right: .1rem;
+	vertical-align: -.03rem;
+}
+
+.icon-phone {
+	background: url("../images/cityshow/icon-phone.png") 0 0 /100% 100% no-repeat;
+}
+
+.icon-program {
+	background: url("../images/cityshow/icon-pargarm.png") 0 0 /100% 100% no-repeat;
+}
+
+.icon-plan {
+	background: url("../images/cityshow/tmplan.png") 0 0 /100% 100% no-repeat;
+}
+
+.building-detail img {
+	width: 100%;
+}
+
+.building-detail {
+	margin-top: .2rem;
+	background: #fff;
+	margin-bottom: .6rem;
+}
+
+.building-tab {
+	display: flex;
+	display: -webkit-flex;
+	text-align: center;
+}
+
+.building-page {
+	background: #f2f2f2;
+}
+
+.building-tab a {
+	flex: 1;
+	-webkit-flex: 1;
+	padding: .2rem 0;
+}
+
+.building-tab a:nth-of-type(1) {
+	border-bottom: 2px solid red;
+}
+
+.building-info {
+	padding: .3rem;
+}
+
+.building-info div span:nth-of-type(1) {
+	color: #b9b9b9;
+	margin-right: .2rem;
+}
+
+.building-bottom-tab {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid #e4e4e4;
+	background: #fff;
+}
+
+.building-bottom-tab a {
+	border-bottom: 0!important;
+}
+
+.building-bottom-tab a:nth-of-type(3) {
+	background: #ed4d4d;
+	color: #fff;
+}
+
+.building-bottom-tab i {
+	width: .32rem;
+	height: .32rem;
+	vertical-align: -.07rem;
+}
+.icon-search {
+	width: .4rem;
+	height: .4rem;
+	background: url("../images/cityshow/icon-search.png") 0 0/100% 100% no-repeat;
+	position: absolute;
+	right: 1.5rem;
+	top: .35rem;
+	z-index: 100;
+
+}
+
+.icon-surprise {
+	background: url("../images/cityshow/icon-surprise.png") 0 0/100% 100% no-repeat;
+}
+
+.icon-appoiment {
+	background: url("../images/cityshow/icon-appoiment.png") 0 0/100% 100% no-repeat;
+}
+
+.icon-note {
+	background: url("../images/cityshow/icon-note.png") 0 0/100% 100% no-repeat;
+}
+
+.house-album {
+	width: 100%;
+	height: 100%;
+	background: #000;
+	position: fixed;
+}
+
+.house-album .swiper-container {
+	width: 100%;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	padding-bottom: .5rem;
+}
+
+.swiper-pagination-bullet{
+	background: #fff;
+}
+.house-album img {
+	width: 100%;
+	height: 3.9rem;
+}
+
+.house-album .swiper-pagination {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	z-index: 10000;
+}
+
+.building-detail .detail-wraps {
+	padding: .3rem .3rem 1.0rem .3rem;
+}
+
+
+/*预约页面*/
+
+.building-wrap-appoint img {
+	width: 100%;
+}
+.appoint-page {
+	background: #fff;
+	padding-bottom: 0.5rem;
+}
+.appoint-ul {
+	padding: .3rem;
+	color: #000;
+	background: #fff;
+	font-size: 0.3rem;
+}
+
+.appoint-ul li {
+	display: flex;
+	display: -webkit-flex;
+	margin-bottom: .25rem;
+}
+
+.appoint-ul li span {
+	flex: 2;
+	-webkit-flex: 2;
+	margin-right: .3rem;
+}
+
+.appoint-ul li input,
+.appoint-ul li textarea {
+	flex: 7;
+	-webkit-flex: 7;
+	border: 1px solid #ccc;
+	padding-left: .1rem;
+	height: .6rem;
+	font-size: .3rem;
+}
+
+.appoint-ul li textarea {
+	height: 2.5rem;
+	font-size: 0.3rem;
+}
+
+.submit-btn {
+	width: 2.8rem;
+	height: .8rem;
+	background: #ec4d4d;
+	text-align: center;
+	line-height: .8rem;
+	color: #fff;
+	margin: 0 auto;
+	border-radius: 0.1rem;
+	-webkit-border-radius: 0.1rem
+}
+
+.elastic-layer {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, .5);
+	display: none;
+}
+
+.pop-up-wrap {
+	width: 5.5rem;
+	height: 3.2rem;
+	border-radius: .2rem;
+	-webkit-border-radius: .2rem;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	overflow: hidden;
+	text-align: center;
+}
+
+.pop-up-msg {
+	flex: 3;
+	-webkit-flex: 3;
+	color: #000;
+	padding-top: .8rem;
+}
+
+.confirm {
+	flex: 1;
+	-webkit-flex: 1;
+	background: #ec4d4d;
+	color: #fff;
+	line-height: .8rem;
+}
+
+
+/*工程进度*/
+
+.progress-head {
+	width: 100%;
+	height: 1.5rem;
+	background: url("../images/cityshow/progress-head-bg.png") 0 0 /100% 100% no-repeat;
+	padding: .3rem;
+}
+
+.house-time {
+	padding: .2rem .3rem;
+}
+
+.progress-title {
+	border-left: 2px solid #ffc000;
+	padding-left: .1rem;
+	margin-bottom: .2rem;
+}
+
+.house-time-info {
+	border-top: 1px solid #e4e4e4;
+	padding-top: .2rem;
+}
+
+.project-progress {
+	padding: .3rem;
+}
+
+.project-progress-ul {
+	border-top: 1px solid #e4e4e4;
+	padding: .2rem;
+	position: relative;
+}
+
+.project-progress-ul:before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	background: #e4e4e4;
+	left: 0;
+	top: .5rem;
+	bottom: .2rem;
+}
+
+.project-progress li {
+	display: flex;
+	display: -webkit-flex;
+	position: relative;
+	border-bottom: 1px solid #e4e4e4;
+	padding: .2rem 0;
+}
+
+.project-progress-left {
+	flex: 1;
+	-webkit-flex: 1;
+	margin-right: .2rem;
+}
+
+.project-progress-right {
+	width: 2rem;
+	height: 1.45rem;
+	border-radius: 5px;
+	overflow: hidden;
+	position: relative;
+}
+
+.project-progress-right img {
+	width: 100%;
+	height: 100%;
+}
+
+.project-progress-right .icon-img {
+	width: .55rem;
+	height: .55rem;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.project-dot {
+	display: inline-block;
+	width: .2rem;
+	height: .2rem;
+	background: #e4e4e4;
+	border-radius: .2rem;
+	-webkit-border-radius: .2rem;
+	position: absolute;
+	top: .28rem;
+	left: -.28rem;
+}
+
+.active:nth-of-type(1) .project-dot {
+	background: #ffc000;
+}
+
+.active:nth-of-type(1) .project-progress-info {
+	color: #ffc000;
+}
+.project-progress-time {
+	color: #6D6A6A;
+	font-size: .24rem;
+}
+
+.house-head-img {
+	width: 1rem;
+	height: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	border-radius: 1rem;
+	background: #f2f2f2;
+	overflow: hidden;
+	float: left;
+	margin-right: .2rem;
+}
+.house-head-img img {
+	height: 100%;
+}
+
+.house-head-name {
+	float: left;
+	height: 1rem;
+	line-height: 1rem;
+	color: #fff;
+}
+.city-swiper img{
+	width: 100%;
+	height: 3.9rem;
+}
+
+/*户型列表*/
+
+.house-type {
+	background: #f2f2f2;
+}
+.editor-house-type {
+	width:100%;
+	padding: .3rem;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.editor-house-type img {
+	width: 100%!important;
+	height: auto!important;
+}
+.editor-house-type table {
+	width: 100%!important;
+}
+
+
+.house-type-head {
+	height: 1.00rem;
+	padding: .3rem;
+	background: #fff;
+	position: relative;
+}
+
+.house-type-menu,
+.house-type-follow,
+.type-follow-active {
+	width: .4rem;
+	height: .4rem;
+}
+.house-type-name {
+	float: left;
+}
+.house-type-menu {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: .2rem;
+	background: url("../images/cityshow/arrow_down.png") no-repeat;
+	background-size: .32rem; 
+	background-position:0 .12rem; 
+}
+.house-type-menu.active{
+	background-position:0 -0.3rem; 
+}
+.house-type-follow {
+	float: right;
+	background: url("../images/cityshow/wujiaoxing.png") 0 0/100% 100% no-repeat;
+}
+
+.type-follow-active {
+	float: right;
+	background: url("../images/cityshow/wujiaoxing-active.png") 0 0/100% 100% no-repeat;
+}
+
+.house-type-menulist {
+	position: absolute;
+	background: #fff;
+	font-size: .3rem;
+	color: #1d1d1d;
+	left: .2rem;
+	top: 1.24rem;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+}
+.house-type-menulist:before,.house-type-menulist:after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: -0.48rem;
+	left: .94rem;
+	border-style: solid;
+	border-width: .26rem;
+	border-color: transparent transparent #fff transparent ;
+}
+.house-type-menulist:before{
+	content: '';
+	top: -0.50rem;
+	left: .94rem;
+	border-color: transparent transparent rgba(0, 0, 0, .1) transparent ;
+}
+.house-type-menulist .li_item{
+	padding: .2rem;
+	position: relative;
+}
+.house-type-menulist .li_item:first-child:before{
+	content: '';
+	display: none;
+}
+.house-type-menulist .li_item:active,.house-type-menulist .li_item.active{
+	color: #cd4e4d;
+}
+
+.house-type-menulist {
+	line-height: .6rem;
+}
+
+.house-type-menulist .house-dot {
+	display: inline-block;
+	vertical-align: middle;
+	width: .32rem;
+	height: .32rem;
+	background: url("../images/cityshow/selected.png") no-repeat;
+	background-size: 100%;
+	margin-left: .24rem;
+}
+.house-type-menulist .li_item:active .house-dot, .house-type-menulist .li_item.active .house-dot{
+	background-position: 0 -.43rem;
+}
+
+.vr-house-btn {
+	height: 1rem;
+	background: #ed4d4d;
+	color: #fff;
+	text-align: center;
+	line-height: 1rem;
+}
+
+.vr-house-btn .icon-vr {
+	display: inline-block;
+	width: .4rem;
+	height: .4rem;
+	background: url("../images/cityshow/vr-icon.png") 0 0 / 100% 100% no-repeat;
+	vertical-align: -.08rem;
+	margin-right: .2rem;
+}
+
+.funs-tab {
+	display: flex;
+	display: -webkit-flex;
+	padding: .1rem .3rem;
+	background: #fff;
+	text-align: center;
+}
+
+.funs-tab div:nth-of-type(1),.funs-tab div:nth-of-type(2){
+	margin-right: .3rem;
+}
+.funs-tab .v-active {
+	flex: 1;
+	-webkit-flex: 1;
+	height: .6rem;
+	line-height: .6rem;
+	border: 1px solid #ed4d4d;
+	background: #ed4d4d;
+	color: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.funs-tab .v-inactive {
+	flex: 1;
+	-webkit-flex: 1;
+	height: .6rem;
+	border: 1px solid #ccc;
+	line-height: .6rem;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.funs-search {
+	padding: .2rem .3rem;
+	background: #fff;
+	box-sizing: border-box;
+}
+
+.funs-search select {
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #f2f2f2;
+	height: .7rem;
+	border-radius: .5rem;
+	-webkit-border-radius: .5rem;
+	padding-left: .3rem;
+	color: #cccccc;
+}
+
+.funsactive-list {
+	margin: .2rem 0;
+}
+
+.funsactive-list li {
+	display: flex;
+	display: -webkit-flex;
+	padding: .3rem;
+	align-items: center;
+	background: #fff;
+	border: 1px solid #e4e4e4;
+	position: relative;
+}
+
+.funsactive-img {
+	width: 1rem;
+	height: 1rem;
+	border-radius: .2rem;
+	-webkit-border-radius: .2rem;
+	overflow: hidden;
+}
+
+.funsactive-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.funsactive-info {
+	flex: 1;
+	-webkit-flex: 1;
+	padding-left: .3rem;
+}
+.funsactive-info p:first-child {
+	display:block;
+	width: 5.5rem;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.funsactive-info p:last-child {
+	color: #ccc;
+	font-size: 0.24rem;
+}
+.funshouse-name {
+    white-space: nowrap;
+    position: absolute;
+    right: .2rem;
+    top: 0.8rem;
+    color: #888;
+    font-size: .26rem;
+}
+.lost-time {
+	width: 0.8rem;
+	height: .4rem;
+	background: #cccccc;
+	color: #454545;
+	text-align: center;
+	line-height: .4rem;
+	position: absolute;
+	right: 12px;
+	top: 5px;
+	font-size: 0.15rem;
+	border-radius: 3px;
+}
+
+.map-top {
+	height: .8rem;
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	box-shadow: 1px 4px 4px #ccc;
+	background: #fff;
+	position: relative;
+	z-index: 100;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+
+.map-top>div {
+	flex: 1;
+	-webkit-flex: 1;
+	text-align: center;
+}
+
+.map-wrap {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+}
+
+.icon-arrow {
+	display: inline-block;
+	vertical-align: -.06rem;
+	height: .3rem;
+	width: .3rem;
+	margin-left: .2rem;
+}
+
+.top-retract {
+	color: #000;
+}
+
+.top-retract .icon-arrow {
+	background: url("../images/cityshow/map-arrow.png") 0 0 /100% 100% no-repeat;
+}
+
+.top-extend {
+	color: #ed4d4d;
+}
+
+.top-extend .icon-arrow {
+	background: url("../images/cityshow/map-arrow-2.png") 0 0 /100% 100% no-repeat;
+}
+
+.area-extend,
+.type-extend {
+	position: relative;
+	z-index: 103;
+	background: #fff;
+	padding: .3rem;
+}
+.house-detail-swiper img{
+	width: 100%;
+	height: 3.9rem;
+}
+
+.type-list,
+.area-list {}
+
+.type-list span,
+.area-list span {
+	display: inline-block;
+	padding: .05rem .4rem;
+	-webkit-border-radius: .4rem;
+	-moz-border-radius: .4rem;
+	border-radius: .4rem;
+	margin: .2rem;
+}
+.area-extend  .active,.type-extend .active{
+	background:#ed4d4d ;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.house-map-detail {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	z-index: 100;
+}
+
+.house-map-detail:after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 101;
+	top: 0;
+	left: 0;
+	background: -webkit-gradient(linear, center bottom, center top, from(rgba(0, 0, 0, .8)), to(rgba(0, 0, 0, 0)));
+}
+
+.house-map-detail img {
+	width: 100%;
+}
+
+.house-map-detail-text {
+	position: absolute;
+	color: #fff;
+	bottom: 0;
+	left: 0;
+	z-index: 102;
+	padding: .3rem;
+	width: 100%;
+}
+
+.map-detail-texttag {
+	padding: .1rem 0;
+}
+
+.house-map-detail-text .map-detail-texttag span {
+	display: inline-block;
+	padding: .05rem .2rem;
+	border: 1px solid #fff;
+	margin-right: .2rem;
+	border-radius: .1rem;
+	-webkit-border-radius: .1rem;
+}
+
+.house-map-detail-text>div:nth-of-type(1) {
+	font-size: .3rem;
+}
+
+.map-detail-textprice {
+	float: right;
+}
+
+.map-detail-textname {
+	margin-right: .2rem;
+}
+.map-tag {
+	position: relative;
+}
+.map-tag div p span {
+	color: red;
+}
+.map-active div p span {
+	color: #fff;
+}
+.map-tag:after {
+	position: absolute;
+	bottom: -5px;
+	left: 46px;
+	content: '';
+	background: #fff;
+	vertical-align: middle;
+	display: inline-block;
+	border-color: #fff #ccc #999 #ccc;
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	height: 8px;
+	width: 8px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+}
+.map-active {
+	background: #3f7dfa!important;
+	color: #fff;
+}
+.map-active:after {
+	background: #3f7dfa;
+}
+.market-wrap>img{
+	width: 100%;
+}
+.market-wrap ul{
+	padding: .3rem;
+}
+.market-wrap li a{
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+.active-list {
+	border-bottom: 1px solid #e4e4e4;
+	padding: .2rem 0;
+}
+.active-list .active-img{
+	width: 1rem;
+	height: 1rem;
+	border-radius:.2rem;
+	-webkit-border-radius: .2rem;
+	margin-right: .3rem;
+}
+.active-list .active-img img{
+	width: 100%;
+}
+.active-list .arr-right {
+	width: .3rem;
+	height: .6rem;
+	background: url("../images/cityshow/arr-right.png") 0 0 /100% 100% no-repeat;
+}
+.active-info {
+	flex:1;
+	-webkit-flex:1;
+}
+.active-info p:nth-of-type(1){
+	font-weight: bold;
+	font-size: .30rem;
+}
+.map_house_name {
+	width: 100px;
+	margin:0 auto;
+	display:block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+

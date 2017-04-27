@@ -1,0 +1,80 @@
+<div class="mycto-index-wrap">
+  <div class="mycto-index-top">
+    <!-- 头像 -->
+    <div class="index-head-portrait-box boderradius-50"><img class="boderradius-50"  ng-src="{{wxUserInfo.wxusersex.head_url}}"></div>
+    <div class="index-user-name" ng-bind="wxUserInfo.nick"></div>
+    <div class="index-user-info">
+      <span>员工编号 <i ng-bind="staffInfo.employee_id"></i></span>
+      <span>员工姓名 <i ng-bind="staffInfo.real_name"></i></span>
+    </div>
+    <div class="zixun-center boderradius-4">
+      <a ng-click="changeHref('/mycto/newsList')" >资讯中心</a>
+    </div>
+  </div>
+  <!-- 客户列表begin -->
+  <a class="active_data bline" href="javascript:;" ng-click="goToUrl('/mycto/allstatistics')">
+        活动数据总览
+  </a>
+  <div class="mycto-client-list">
+    <div class="sreach clearfix">
+      <select class="float-left color-5f5f5f" ng-model="model.status"
+              ng-options="o.id as o.name for o in statusList"
+              ng-change="clientType(model.status)">
+      </select>
+      <input class="float-left" type="text" ng-model="model.seach" placeholder="请输入手机号码/姓名查询">
+      <span class="btn-sreach float-left boderradius-4" ng-click="sreach()">查找</span>
+    </div>
+    <div class="client-list">
+      <ul class="clearfix ">
+        <li class="flex" ng-repeat="item in userlists track by $index">
+            <img class="width70 boderradius-50" ng-src="{{item.wxusersex.head_url}}">
+            <span class="flex_item client_txt client-username" ng-bind="item.wxusersex.user_name"></span>
+            <span class="flex_item client_txt client-userkind" ng-bind="showStatus[item.wxusersex.status-1]"></span>
+            <span class="option_btn client-usericon" ng-click="showBox(item.wxusersex.user_id,item.wxusersex.status)"></span>
+            <span class=" option_btn client-detail" ng-click="goHref(item.wxusersex.user_id)"></span>
+            <span class="option_btn tongji" ng-click="goToHref('/mycto/activestatistics?user_id=',item.wxusersex.user_id)"></span>
+        </li>
+
+        <li ng-if="userlists.length == 0" class="border-0">
+          <div class="disconcerned">
+            <div class="disconcerned-data">
+              <img src="../../images/mycto/icon4.png" alt="">
+
+              <p class="color-5f5f5f">暂无数据，精彩敬请期待哦</p>
+            </div>
+            <div class="mycto-login-submit boderradius-4">
+              <a ng-click="changeHref('/building/index')">点击浏览楼盘信息</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 客户列表end -->
+
+  <div class="modal-updatestyle" ng-if="isShow">
+    <!-- 更改状态 -->
+    <div class="client-status boderradius-4" >
+      <p>请选择要更改的状态</p>
+      <div class="status clearfix">
+          <label class="sex-bg sex-bg-small">
+            <span ng-class="{active:radio_status == 1}"></span>
+            <input type="radio" name="status" value="1" ng-model="radio_status" >新客户
+          </label>
+        <label class="sex-bg sex-bg-small">
+          <span ng-class="{active:radio_status == 2}"></span>
+            <input type="radio" name="status" value="2" ng-model="radio_status" >意向客户
+          </label>
+        <label class="sex-bg sex-bg-small">
+          <span ng-class="{active:radio_status == 3}"></span>
+            <input type="radio" name="status" value="3" ng-model="radio_status" >已成交
+          </label>
+      </div>
+      <div class="status-btn">
+        <span ng-click="cancle()">取消</span>
+        <span ng-click="changeStatus(radio_status)">确定</span>
+      </div>
+    </div>
+    <!-- 更改成功/更改状态end -->
+  </div>
+</div>

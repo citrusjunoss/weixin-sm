@@ -1,0 +1,19 @@
+<div class="house-type" ng-show="!noData">
+    <div class="house-type-head">
+        <div class="house-type-name" ng-click="menuShow=!menuShow">
+            <span ng-bind="houseTypeName" >一室一厅一卫一厨</span>
+            <span class="house-type-menu " ng-class="{'active': menuShow}"></span>
+        </div>
+        <div ng-class="{false:'house-type-follow' , true:'type-follow-active'}[follow]" ng-click="atten(houseTypeInfo.house_type_id)">
+        </div>
+        <ul class="house-type-menulist" ng-show="menuShow">
+            <li class="li_item tline" ng-class="{true: 'active', false: ''}[houseTypeName==t.house_type_name]" ng-repeat="t in houseTypeList" ng-click="chooseType(t.house_type_class_id,$index)"><span ng-bind="t.house_type_name">二室一厅一卫一厨</span><span class="house-dot"></span></li>
+        </ul>
+    </div>
+    <div id="js-content" class="editor-house-type">
+        <p Filter ng-bind-html="houseTypeInfo.content | trust:'html'" class="rich-text"></p>
+    </div>
+    <!-- 	<div class="vr-house-btn" ng-click="goHref(houseTypeInfo.vr)">
+		<i class="icon-vr"></i>360看房
+	</div> -->
+</div>
